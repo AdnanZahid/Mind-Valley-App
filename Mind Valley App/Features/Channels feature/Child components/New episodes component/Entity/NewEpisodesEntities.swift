@@ -15,11 +15,11 @@ struct NewEpisodesList: Codable {
 
 // MARK: - DataClass
 struct NewEpisodesDataClass: Codable {
-    let media: [NewEpisodes]
+    let media: [NewEpisode]
 }
 
 // MARK: - Media
-struct NewEpisodes: Codable {
+struct NewEpisode: Codable {
     let type, title: String
     let coverAsset: CoverAsset
     let channel: Channel

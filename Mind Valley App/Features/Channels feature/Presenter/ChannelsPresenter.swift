@@ -12,13 +12,16 @@ class ChannelsPresenter {
     
     private weak var view: ChannelsViewProtocol?
     private var newEpisodesRouter: NewEpisodesRouterProtocol
+    private var subchannelsRouter: SubchannelsRouterProtocol
     private var categoryRouter: CategoryRouterProtocol
     
     init(view: ChannelsViewProtocol?,
          newEpisodesRouter: NewEpisodesRouterProtocol = NewEpisodesRouter(),
+         subchannelsRouter: SubchannelsRouterProtocol = SubchannelsRouter(),
          categoryRouter: CategoryRouterProtocol = CategoryRouter()) {
         self.view = view
         self.newEpisodesRouter = newEpisodesRouter
+        self.subchannelsRouter = subchannelsRouter
         self.categoryRouter = categoryRouter
     }
 }
@@ -29,8 +32,8 @@ extension ChannelsPresenter: ChannelsPresenterProtocol {
         return newEpisodesRouter.getView()
     }
     
-    func getChannelsView() -> UIViewController {
-        return UIViewController()
+    func getSubchannelsView() -> UIViewController {
+        return subchannelsRouter.getView()
     }
     
     func getCategoryView() -> UIViewController {

@@ -19,12 +19,12 @@ protocol NewEpisodesPresenterProtocol: class {
 
 protocol NewEpisodesViewProtocol: class {
     var presenter: NewEpisodesPresenterProtocol? { get set }
-    func setNewEpisodes(_ newEpisodes: [NewEpisodes])
+    func setNewEpisodes(_ newEpisodes: [NewEpisode])
     func showError()
 }
 
 protocol NewEpisodesRepoProtocol: class {
-    func loadNewEpisodes(successHandler: @escaping ([NewEpisodes]) -> (),
+    func loadNewEpisodes(successHandler: @escaping ([NewEpisode]) -> (),
                          failureHandler: @escaping () -> ())
 }
 

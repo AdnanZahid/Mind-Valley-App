@@ -1,5 +1,5 @@
 //
-//  NewEpisodesViewController.swift
+//  SubchannelsViewController.swift
 //  Mind Valley App
 //
 //  Created by Adnan Zahid on 17/07/2020.
@@ -8,45 +8,45 @@
 
 import UIKit
 
-class NewEpisodesViewController: UIViewController {
+class SubchannelsViewController: UIViewController {
     
     private enum Constants {
         static let numberOfColumns = 2
-        static let cellIdentifier = "NewEpisodesCell"
+        static let cellIdentifier = "SubchannelsCell"
     }
     
-    var presenter: NewEpisodesPresenterProtocol?
-    private var newEpisodes: [NewEpisode] = []
+    var presenter: SubchannelsPresenterProtocol?
+    private var subchannels: [Subchannel] = []
     @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNewEpisodesCollectionView()
+        setupSubchannelsCollectionView()
         presenter?.didLoadView()
     }
     
-    private func setupNewEpisodesCollectionView() {
+    private func setupSubchannelsCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
 }
 
-extension NewEpisodesViewController: UICollectionViewDataSource {
+extension SubchannelsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newEpisodes.count
+        return subchannels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                                            for: indexPath) as? NewEpisodesCell else { return UICollectionViewCell() }
-        let item = newEpisodes[indexPath.row]
-        cell.setup(title: item.title, channelName: item.channel.title, imageUrl: item.coverAsset.url)
+                                                            for: indexPath) as? SubchannelsCell else { return UICollectionViewCell() }
+        let item = subchannels[indexPath.row]
+        cell.setup(title: item.title, imageUrl: item.coverAsset.url)
         return cell
     }
 }
 
-extension NewEpisodesViewController: UICollectionViewDelegateFlowLayout {
+extension SubchannelsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -58,10 +58,10 @@ extension NewEpisodesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NewEpisodesViewController: NewEpisodesViewProtocol {
+extension SubchannelsViewController: SubchannelsViewProtocol {
     
-    func setNewEpisodes(_ newEpisodes: [NewEpisode]) {
-        self.newEpisodes = newEpisodes
+    func setSubchannels(_ subchannels: [Subchannel]) {
+        self.subchannels = subchannels
         collectionView.reloadData()
     }
     
