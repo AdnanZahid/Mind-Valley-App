@@ -21,7 +21,7 @@ extension ChannelsRouter: ChannelsRouterProtocol {
     
     func present(on viewController: UIViewController, presentationMethod: PresentationMethod) {
         let view = ChannelsViewController()
-        self.view = view as? ChannelsViewProtocol
+        self.view = view
         let presenter = ChannelsPresenter(view: self.view)
         self.view?.presenter = presenter
         switch presentationMethod {

@@ -10,23 +10,39 @@ import UIKit
 
 class ChannelsViewController: UIViewController {
     
+    var presenter: ChannelsPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNewEpisodesView()
+//        setupNewEpisodesView()
+        setupSubchannelsView()
 //        setupCategoryView()
     }
     
     private func setupNewEpisodesView() {
-        let childView = NewEpisodesRouter().getView()
+        guard let presenter = presenter else { return }
+        let childView = presenter.getNewEpisodesView()
+        addChild(childView)
+        view.addSubview(childView.view)
+        childView.didMove(toParent: self)
+    }
+    
+    private func setupSubchannelsView() {
+        guard let presenter = presenter else { return }
+        let childView = presenter.getSubchannelsView()
         addChild(childView)
         view.addSubview(childView.view)
         childView.didMove(toParent: self)
     }
     
     private func setupCategoryView() {
-        let childView = CategoryRouter().getView()
+        guard let presenter = presenter else { return }
+        let childView = presenter.getCategoryView()
         addChild(childView)
         view.addSubview(childView.view)
         childView.didMove(toParent: self)
     }
+}
+
+extension ChannelsViewController: ChannelsViewProtocol {
 }

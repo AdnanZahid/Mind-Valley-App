@@ -19,7 +19,7 @@ class NewEpisodesRepo {
 
 extension NewEpisodesRepo: NewEpisodesRepoProtocol {
     
-    func loadNewEpisodes(successHandler: @escaping ([NewEpisodes]) -> (),
+    func loadNewEpisodes(successHandler: @escaping ([NewEpisode]) -> (),
                          failureHandler: @escaping () -> ()) {
         dao.loadNewEpisodes(successHandler: { data in
             do {
