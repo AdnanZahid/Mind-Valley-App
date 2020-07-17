@@ -1,0 +1,6 @@
+framework module Pods_Mind_Valley_App {
+  umbrella header "Pods-Mind Valley App-umbrella.h"
+
+  export *
+  module * { export * }
+}

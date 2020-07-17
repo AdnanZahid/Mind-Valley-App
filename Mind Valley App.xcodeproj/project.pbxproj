@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10DC2CF8C6D8A1CACA83F6C9 /* Pods_Mind_Valley_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4966F14D615A46705340F22 /* Pods_Mind_Valley_AppTests.framework */; };
+		9A8876AF4A69087FCE6EA282 /* Pods_Mind_Valley_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83C8E69BBB6F750C454D11B /* Pods_Mind_Valley_App.framework */; };
 		E641D75924C1CDBB00FEB37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D75824C1CDBB00FEB37E /* AppDelegate.swift */; };
 		E641D75B24C1CDBB00FEB37E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D75A24C1CDBB00FEB37E /* SceneDelegate.swift */; };
 		E641D75D24C1CDBB00FEB37E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D75C24C1CDBB00FEB37E /* ViewController.swift */; };
@@ -14,18 +16,31 @@
 		E641D76224C1CDBE00FEB37E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E641D76124C1CDBE00FEB37E /* Assets.xcassets */; };
 		E641D76524C1CDBE00FEB37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641D76324C1CDBE00FEB37E /* LaunchScreen.storyboard */; };
 		E641D77024C1CDBE00FEB37E /* Mind_Valley_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D76F24C1CDBE00FEB37E /* Mind_Valley_AppTests.swift */; };
-		E641D78024C1D3DB00FEB37E /* ChannelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */; };
-		E641D78224C1D3F500FEB37E /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */; };
-		E641D78524C1D5D000FEB37E /* BubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78424C1D5D000FEB37E /* BubbleCell.swift */; };
-		E641D78824C1DB2500FEB37E /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */; };
-		E641D78A24C1DB4700FEB37E /* ChannelsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */; };
-		E641D78C24C1DD2500FEB37E /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */; };
-		E641D78E24C1DD7600FEB37E /* ChannelsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */; };
-		E641D79024C1DD9400FEB37E /* ChannelsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */; };
-		E641D79324C1DDED00FEB37E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79224C1DDED00FEB37E /* Network.swift */; };
-		E641D79524C1DE0200FEB37E /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79424C1DE0200FEB37E /* NetworkInterface.swift */; };
-		E641D79724C1DE3600FEB37E /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79624C1DE3600FEB37E /* RequestInfo.swift */; };
-		E641D79A24C1E5EB00FEB37E /* CategoryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */; };
+		E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */; };
+		E6DC564024C22C0B00A5D91D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563D24C22C0B00A5D91D /* Network.swift */; };
+		E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */; };
+		E6DC565F24C22CA100A5D91D /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC565E24C22CA100A5D91D /* ChannelsViewController.swift */; };
+		E6DC566224C22D9300A5D91D /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566124C22D9300A5D91D /* ChannelsPresenter.swift */; };
+		E6DC567524C22DBD00A5D91D /* CategoryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566624C22DBD00A5D91D /* CategoryEntities.swift */; };
+		E6DC567624C22DBD00A5D91D /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566824C22DBD00A5D91D /* CategoryPresenter.swift */; };
+		E6DC567724C22DBD00A5D91D /* CategoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566A24C22DBD00A5D91D /* CategoryDao.swift */; };
+		E6DC567924C22DBD00A5D91D /* CategoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DC566E24C22DBD00A5D91D /* CategoryViewController.storyboard */; };
+		E6DC567A24C22DBD00A5D91D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566F24C22DBD00A5D91D /* CategoryViewController.swift */; };
+		E6DC567B24C22DBD00A5D91D /* CategoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */; };
+		E6DC567C24C22DBD00A5D91D /* CategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567224C22DBD00A5D91D /* CategoryRepo.swift */; };
+		E6DC567D24C22DBD00A5D91D /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567424C22DBD00A5D91D /* CategoryRouter.swift */; };
+		E6DC567F24C22E3600A5D91D /* ChannelsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567E24C22E3600A5D91D /* ChannelsInterface.swift */; };
+		E6DC568224C22F9200A5D91D /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568124C22F9200A5D91D /* ChannelsRouter.swift */; };
+		E6DC568424C232FD00A5D91D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568324C232FD00A5D91D /* CategoryCell.swift */; };
+		E6DC569624C2333A00A5D91D /* NewEpisodesEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568724C2333A00A5D91D /* NewEpisodesEntities.swift */; };
+		E6DC569724C2333A00A5D91D /* NewEpisodesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568924C2333A00A5D91D /* NewEpisodesPresenter.swift */; };
+		E6DC569824C2333A00A5D91D /* NewEpisodesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568B24C2333A00A5D91D /* NewEpisodesDao.swift */; };
+		E6DC569924C2333A00A5D91D /* NewEpisodesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568C24C2333A00A5D91D /* NewEpisodesInterface.swift */; };
+		E6DC569A24C2333A00A5D91D /* NewEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568F24C2333A00A5D91D /* NewEpisodesCell.swift */; };
+		E6DC569B24C2333A00A5D91D /* NewEpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC569024C2333A00A5D91D /* NewEpisodesViewController.swift */; };
+		E6DC569C24C2333A00A5D91D /* NewEpisodesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DC569124C2333A00A5D91D /* NewEpisodesViewController.storyboard */; };
+		E6DC569D24C2333A00A5D91D /* NewEpisodesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC569324C2333A00A5D91D /* NewEpisodesRepo.swift */; };
+		E6DC569E24C2333A00A5D91D /* NewEpisodesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC569524C2333A00A5D91D /* NewEpisodesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28542AC5AC473AD097FE6028 /* Pods-Mind Valley AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mind Valley AppTests.release.xcconfig"; path = "Target Support Files/Pods-Mind Valley AppTests/Pods-Mind Valley AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8150F755F75E7C312C5DEFFE /* Pods-Mind Valley App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mind Valley App.release.xcconfig"; path = "Target Support Files/Pods-Mind Valley App/Pods-Mind Valley App.release.xcconfig"; sourceTree = "<group>"; };
+		AA6BD3F33B217695FACF3A6C /* Pods-Mind Valley AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mind Valley AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Mind Valley AppTests/Pods-Mind Valley AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E641D75524C1CDBB00FEB37E /* Mind Valley App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mind Valley App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E641D75824C1CDBB00FEB37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E641D75A24C1CDBB00FEB37E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,18 +68,34 @@
 		E641D76B24C1CDBE00FEB37E /* Mind Valley AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mind Valley AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E641D76F24C1CDBE00FEB37E /* Mind_Valley_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mind_Valley_AppTests.swift; sourceTree = "<group>"; };
 		E641D77124C1CDBE00FEB37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChannelsViewController.storyboard; sourceTree = "<group>"; };
-		E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
-		E641D78424C1D5D000FEB37E /* BubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCell.swift; sourceTree = "<group>"; };
-		E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
-		E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInterface.swift; sourceTree = "<group>"; };
-		E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
-		E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepo.swift; sourceTree = "<group>"; };
-		E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsDao.swift; sourceTree = "<group>"; };
-		E641D79224C1DDED00FEB37E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		E641D79424C1DE0200FEB37E /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
-		E641D79624C1DE3600FEB37E /* RequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
-		E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntities.swift; sourceTree = "<group>"; };
+		E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		E6DC563D24C22C0B00A5D91D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
+		E6DC565E24C22CA100A5D91D /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		E6DC566124C22D9300A5D91D /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
+		E6DC566624C22DBD00A5D91D /* CategoryEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEntities.swift; sourceTree = "<group>"; };
+		E6DC566824C22DBD00A5D91D /* CategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
+		E6DC566A24C22DBD00A5D91D /* CategoryDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDao.swift; sourceTree = "<group>"; };
+		E6DC566E24C22DBD00A5D91D /* CategoryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategoryViewController.storyboard; sourceTree = "<group>"; };
+		E6DC566F24C22DBD00A5D91D /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryInterface.swift; sourceTree = "<group>"; };
+		E6DC567224C22DBD00A5D91D /* CategoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRepo.swift; sourceTree = "<group>"; };
+		E6DC567424C22DBD00A5D91D /* CategoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		E6DC567E24C22E3600A5D91D /* ChannelsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInterface.swift; sourceTree = "<group>"; };
+		E6DC568124C22F9200A5D91D /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
+		E6DC568324C232FD00A5D91D /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		E6DC568724C2333A00A5D91D /* NewEpisodesEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesEntities.swift; sourceTree = "<group>"; };
+		E6DC568924C2333A00A5D91D /* NewEpisodesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesPresenter.swift; sourceTree = "<group>"; };
+		E6DC568B24C2333A00A5D91D /* NewEpisodesDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesDao.swift; sourceTree = "<group>"; };
+		E6DC568C24C2333A00A5D91D /* NewEpisodesInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesInterface.swift; sourceTree = "<group>"; };
+		E6DC568F24C2333A00A5D91D /* NewEpisodesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesCell.swift; sourceTree = "<group>"; };
+		E6DC569024C2333A00A5D91D /* NewEpisodesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesViewController.swift; sourceTree = "<group>"; };
+		E6DC569124C2333A00A5D91D /* NewEpisodesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEpisodesViewController.storyboard; sourceTree = "<group>"; };
+		E6DC569324C2333A00A5D91D /* NewEpisodesRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesRepo.swift; sourceTree = "<group>"; };
+		E6DC569524C2333A00A5D91D /* NewEpisodesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEpisodesRouter.swift; sourceTree = "<group>"; };
+		EADE476B41564C0D418E849C /* Pods-Mind Valley App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mind Valley App.debug.xcconfig"; path = "Target Support Files/Pods-Mind Valley App/Pods-Mind Valley App.debug.xcconfig"; sourceTree = "<group>"; };
+		F4966F14D615A46705340F22 /* Pods_Mind_Valley_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mind_Valley_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83C8E69BBB6F750C454D11B /* Pods_Mind_Valley_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mind_Valley_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8876AF4A69087FCE6EA282 /* Pods_Mind_Valley_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,18 +111,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10DC2CF8C6D8A1CACA83F6C9 /* Pods_Mind_Valley_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D637B9BC6B0AE78408E49C9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F83C8E69BBB6F750C454D11B /* Pods_Mind_Valley_App.framework */,
+				F4966F14D615A46705340F22 /* Pods_Mind_Valley_AppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D733D36D7D8F895765E85535 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EADE476B41564C0D418E849C /* Pods-Mind Valley App.debug.xcconfig */,
+				8150F755F75E7C312C5DEFFE /* Pods-Mind Valley App.release.xcconfig */,
+				AA6BD3F33B217695FACF3A6C /* Pods-Mind Valley AppTests.debug.xcconfig */,
+				28542AC5AC473AD097FE6028 /* Pods-Mind Valley AppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E641D74C24C1CDBB00FEB37E = {
 			isa = PBXGroup;
 			children = (
 				E641D75724C1CDBB00FEB37E /* Mind Valley App */,
 				E641D76E24C1CDBE00FEB37E /* Mind Valley AppTests */,
 				E641D75624C1CDBB00FEB37E /* Products */,
+				D733D36D7D8F895765E85535 /* Pods */,
+				D637B9BC6B0AE78408E49C9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,15 +161,15 @@
 		E641D75724C1CDBB00FEB37E /* Mind Valley App */ = {
 			isa = PBXGroup;
 			children = (
-				E641D79124C1DDC800FEB37E /* Network */,
-				E641D77A24C1D37B00FEB37E /* Channels component */,
+				E6DC563A24C22C0B00A5D91D /* Core */,
+				E6DC563924C22BCF00A5D91D /* Features */,
 				E641D75824C1CDBB00FEB37E /* AppDelegate.swift */,
+				E641D76124C1CDBE00FEB37E /* Assets.xcassets */,
+				E641D76624C1CDBE00FEB37E /* Info.plist */,
+				E641D76324C1CDBE00FEB37E /* LaunchScreen.storyboard */,
+				E641D75E24C1CDBB00FEB37E /* Main.storyboard */,
 				E641D75A24C1CDBB00FEB37E /* SceneDelegate.swift */,
 				E641D75C24C1CDBB00FEB37E /* ViewController.swift */,
-				E641D75E24C1CDBB00FEB37E /* Main.storyboard */,
-				E641D76124C1CDBE00FEB37E /* Assets.xcassets */,
-				E641D76324C1CDBE00FEB37E /* LaunchScreen.storyboard */,
-				E641D76624C1CDBE00FEB37E /* Info.plist */,
 			);
 			path = "Mind Valley App";
 			sourceTree = "<group>";
@@ -125,86 +183,219 @@
 			path = "Mind Valley AppTests";
 			sourceTree = "<group>";
 		};
-		E641D77A24C1D37B00FEB37E /* Channels component */ = {
+		E6DC563924C22BCF00A5D91D /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */,
-				E641D77E24C1D3C000FEB37E /* Dao */,
-				E641D79824C1E5D700FEB37E /* Entity */,
-				E641D77C24C1D3B700FEB37E /* Presenter */,
-				E641D77D24C1D3BC00FEB37E /* Repo */,
-				E641D78624C1DB1800FEB37E /* Router */,
-				E641D77B24C1D3B300FEB37E /* View */,
+				E6DC564224C22C1300A5D91D /* Channels feature */,
 			);
-			path = "Channels component";
+			path = Features;
 			sourceTree = "<group>";
 		};
-		E641D77B24C1D3B300FEB37E /* View */ = {
+		E6DC563A24C22C0B00A5D91D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E641D78324C1D5B600FEB37E /* Cells */,
-				E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */,
-				E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */,
+				E6DC563B24C22C0B00A5D91D /* Network */,
 			);
-			path = View;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		E641D77C24C1D3B700FEB37E /* Presenter */ = {
+		E6DC563B24C22C0B00A5D91D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		E641D77D24C1D3BC00FEB37E /* Repo */ = {
-			isa = PBXGroup;
-			children = (
-				E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */,
-			);
-			path = Repo;
-			sourceTree = "<group>";
-		};
-		E641D77E24C1D3C000FEB37E /* Dao */ = {
-			isa = PBXGroup;
-			children = (
-				E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */,
-			);
-			path = Dao;
-			sourceTree = "<group>";
-		};
-		E641D78324C1D5B600FEB37E /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E641D78424C1D5D000FEB37E /* BubbleCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		E641D78624C1DB1800FEB37E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		E641D79124C1DDC800FEB37E /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				E641D79224C1DDED00FEB37E /* Network.swift */,
-				E641D79424C1DE0200FEB37E /* NetworkInterface.swift */,
-				E641D79624C1DE3600FEB37E /* RequestInfo.swift */,
+				E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */,
+				E6DC563D24C22C0B00A5D91D /* Network.swift */,
+				E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		E641D79824C1E5D700FEB37E /* Entity */ = {
+		E6DC564224C22C1300A5D91D /* Channels feature */ = {
 			isa = PBXGroup;
 			children = (
-				E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */,
+				E6DC567E24C22E3600A5D91D /* ChannelsInterface.swift */,
+				E6DC566324C22D9A00A5D91D /* Child components */,
+				E6DC566024C22D8100A5D91D /* Presenter */,
+				E6DC568024C22F8400A5D91D /* Router */,
+				E6DC565D24C22C8800A5D91D /* View */,
+			);
+			path = "Channels feature";
+			sourceTree = "<group>";
+		};
+		E6DC565D24C22C8800A5D91D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC565E24C22CA100A5D91D /* ChannelsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6DC566024C22D8100A5D91D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC566124C22D9300A5D91D /* ChannelsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E6DC566324C22D9A00A5D91D /* Child components */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568524C2333A00A5D91D /* New episodes component */,
+				E6DC566424C22DBD00A5D91D /* Category component */,
+			);
+			path = "Child components";
+			sourceTree = "<group>";
+		};
+		E6DC566424C22DBD00A5D91D /* Category component */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */,
+				E6DC566924C22DBD00A5D91D /* Dao */,
+				E6DC566524C22DBD00A5D91D /* Entity */,
+				E6DC566724C22DBD00A5D91D /* Presenter */,
+				E6DC567124C22DBD00A5D91D /* Repo */,
+				E6DC567324C22DBD00A5D91D /* Router */,
+				E6DC566B24C22DBD00A5D91D /* View */,
+			);
+			path = "Category component";
+			sourceTree = "<group>";
+		};
+		E6DC566524C22DBD00A5D91D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC566624C22DBD00A5D91D /* CategoryEntities.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		E6DC566724C22DBD00A5D91D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC566824C22DBD00A5D91D /* CategoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E6DC566924C22DBD00A5D91D /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC566A24C22DBD00A5D91D /* CategoryDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		E6DC566B24C22DBD00A5D91D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC566E24C22DBD00A5D91D /* CategoryViewController.storyboard */,
+				E6DC566F24C22DBD00A5D91D /* CategoryViewController.swift */,
+				E6DC566C24C22DBD00A5D91D /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6DC566C24C22DBD00A5D91D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568324C232FD00A5D91D /* CategoryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E6DC567124C22DBD00A5D91D /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC567224C22DBD00A5D91D /* CategoryRepo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		E6DC567324C22DBD00A5D91D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC567424C22DBD00A5D91D /* CategoryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E6DC568024C22F8400A5D91D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568124C22F9200A5D91D /* ChannelsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E6DC568524C2333A00A5D91D /* New episodes component */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568C24C2333A00A5D91D /* NewEpisodesInterface.swift */,
+				E6DC568A24C2333A00A5D91D /* Dao */,
+				E6DC568624C2333A00A5D91D /* Entity */,
+				E6DC568824C2333A00A5D91D /* Presenter */,
+				E6DC569224C2333A00A5D91D /* Repo */,
+				E6DC569424C2333A00A5D91D /* Router */,
+				E6DC568D24C2333A00A5D91D /* View */,
+			);
+			path = "New episodes component";
+			sourceTree = "<group>";
+		};
+		E6DC568624C2333A00A5D91D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568724C2333A00A5D91D /* NewEpisodesEntities.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E6DC568824C2333A00A5D91D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568924C2333A00A5D91D /* NewEpisodesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E6DC568A24C2333A00A5D91D /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568B24C2333A00A5D91D /* NewEpisodesDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		E6DC568D24C2333A00A5D91D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568E24C2333A00A5D91D /* Cells */,
+				E6DC569124C2333A00A5D91D /* NewEpisodesViewController.storyboard */,
+				E6DC569024C2333A00A5D91D /* NewEpisodesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6DC568E24C2333A00A5D91D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC568F24C2333A00A5D91D /* NewEpisodesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E6DC569224C2333A00A5D91D /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC569324C2333A00A5D91D /* NewEpisodesRepo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		E6DC569424C2333A00A5D91D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E6DC569524C2333A00A5D91D /* NewEpisodesRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +405,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E641D77424C1CDBE00FEB37E /* Build configuration list for PBXNativeTarget "Mind Valley App" */;
 			buildPhases = (
+				5F403FBA6A6935ABC08C2C66 /* [CP] Check Pods Manifest.lock */,
 				E641D75124C1CDBB00FEB37E /* Sources */,
 				E641D75224C1CDBB00FEB37E /* Frameworks */,
 				E641D75324C1CDBB00FEB37E /* Resources */,
+				9B690092F10DE06BE9403B53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +424,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E641D77724C1CDBE00FEB37E /* Build configuration list for PBXNativeTarget "Mind Valley AppTests" */;
 			buildPhases = (
+				629C62249A74237DC910F7FB /* [CP] Check Pods Manifest.lock */,
 				E641D76724C1CDBE00FEB37E /* Sources */,
 				E641D76824C1CDBE00FEB37E /* Frameworks */,
 				E641D76924C1CDBE00FEB37E /* Resources */,
@@ -288,10 +482,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6DC569C24C2333A00A5D91D /* NewEpisodesViewController.storyboard in Resources */,
 				E641D76524C1CDBE00FEB37E /* LaunchScreen.storyboard in Resources */,
-				E641D78024C1D3DB00FEB37E /* ChannelsViewController.storyboard in Resources */,
 				E641D76224C1CDBE00FEB37E /* Assets.xcassets in Resources */,
 				E641D76024C1CDBB00FEB37E /* Main.storyboard in Resources */,
+				E6DC567924C22DBD00A5D91D /* CategoryViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,25 +499,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F403FBA6A6935ABC08C2C66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mind Valley App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		629C62249A74237DC910F7FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mind Valley AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B690092F10DE06BE9403B53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mind Valley App/Pods-Mind Valley App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mind Valley App/Pods-Mind Valley App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mind Valley App/Pods-Mind Valley App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E641D75124C1CDBB00FEB37E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E641D78824C1DB2500FEB37E /* ChannelsRouter.swift in Sources */,
+				E6DC565F24C22CA100A5D91D /* ChannelsViewController.swift in Sources */,
+				E6DC564024C22C0B00A5D91D /* Network.swift in Sources */,
+				E6DC569624C2333A00A5D91D /* NewEpisodesEntities.swift in Sources */,
+				E6DC569E24C2333A00A5D91D /* NewEpisodesRouter.swift in Sources */,
+				E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */,
+				E6DC567524C22DBD00A5D91D /* CategoryEntities.swift in Sources */,
+				E6DC569A24C2333A00A5D91D /* NewEpisodesCell.swift in Sources */,
+				E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */,
+				E6DC569B24C2333A00A5D91D /* NewEpisodesViewController.swift in Sources */,
+				E6DC568424C232FD00A5D91D /* CategoryCell.swift in Sources */,
+				E6DC566224C22D9300A5D91D /* ChannelsPresenter.swift in Sources */,
+				E6DC567724C22DBD00A5D91D /* CategoryDao.swift in Sources */,
+				E6DC567C24C22DBD00A5D91D /* CategoryRepo.swift in Sources */,
+				E6DC567624C22DBD00A5D91D /* CategoryPresenter.swift in Sources */,
+				E6DC569724C2333A00A5D91D /* NewEpisodesPresenter.swift in Sources */,
+				E6DC567B24C22DBD00A5D91D /* CategoryInterface.swift in Sources */,
 				E641D75D24C1CDBB00FEB37E /* ViewController.swift in Sources */,
-				E641D79A24C1E5EB00FEB37E /* CategoryEntities.swift in Sources */,
-				E641D79024C1DD9400FEB37E /* ChannelsDao.swift in Sources */,
-				E641D79724C1DE3600FEB37E /* RequestInfo.swift in Sources */,
-				E641D78E24C1DD7600FEB37E /* ChannelsRepo.swift in Sources */,
-				E641D79524C1DE0200FEB37E /* NetworkInterface.swift in Sources */,
+				E6DC568224C22F9200A5D91D /* ChannelsRouter.swift in Sources */,
+				E6DC567A24C22DBD00A5D91D /* CategoryViewController.swift in Sources */,
+				E6DC569924C2333A00A5D91D /* NewEpisodesInterface.swift in Sources */,
 				E641D75924C1CDBB00FEB37E /* AppDelegate.swift in Sources */,
-				E641D79324C1DDED00FEB37E /* Network.swift in Sources */,
-				E641D78524C1D5D000FEB37E /* BubbleCell.swift in Sources */,
-				E641D78A24C1DB4700FEB37E /* ChannelsInterface.swift in Sources */,
-				E641D78224C1D3F500FEB37E /* ChannelsViewController.swift in Sources */,
-				E641D78C24C1DD2500FEB37E /* ChannelsPresenter.swift in Sources */,
+				E6DC567D24C22DBD00A5D91D /* CategoryRouter.swift in Sources */,
 				E641D75B24C1CDBB00FEB37E /* SceneDelegate.swift in Sources */,
+				E6DC569D24C2333A00A5D91D /* NewEpisodesRepo.swift in Sources */,
+				E6DC567F24C22E3600A5D91D /* ChannelsInterface.swift in Sources */,
+				E6DC569824C2333A00A5D91D /* NewEpisodesDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +751,7 @@
 		};
 		E641D77524C1CDBE00FEB37E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EADE476B41564C0D418E849C /* Pods-Mind Valley App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -498,6 +770,7 @@
 		};
 		E641D77624C1CDBE00FEB37E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8150F755F75E7C312C5DEFFE /* Pods-Mind Valley App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +789,7 @@
 		};
 		E641D77824C1CDBE00FEB37E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA6BD3F33B217695FACF3A6C /* Pods-Mind Valley AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +812,7 @@
 		};
 		E641D77924C1CDBE00FEB37E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28542AC5AC473AD097FE6028 /* Pods-Mind Valley AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
