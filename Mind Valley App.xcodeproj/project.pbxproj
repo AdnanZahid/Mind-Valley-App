@@ -14,6 +14,18 @@
 		E641D76224C1CDBE00FEB37E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E641D76124C1CDBE00FEB37E /* Assets.xcassets */; };
 		E641D76524C1CDBE00FEB37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641D76324C1CDBE00FEB37E /* LaunchScreen.storyboard */; };
 		E641D77024C1CDBE00FEB37E /* Mind_Valley_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D76F24C1CDBE00FEB37E /* Mind_Valley_AppTests.swift */; };
+		E641D78024C1D3DB00FEB37E /* ChannelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */; };
+		E641D78224C1D3F500FEB37E /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */; };
+		E641D78524C1D5D000FEB37E /* BubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78424C1D5D000FEB37E /* BubbleCell.swift */; };
+		E641D78824C1DB2500FEB37E /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */; };
+		E641D78A24C1DB4700FEB37E /* ChannelsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */; };
+		E641D78C24C1DD2500FEB37E /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */; };
+		E641D78E24C1DD7600FEB37E /* ChannelsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */; };
+		E641D79024C1DD9400FEB37E /* ChannelsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */; };
+		E641D79324C1DDED00FEB37E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79224C1DDED00FEB37E /* Network.swift */; };
+		E641D79524C1DE0200FEB37E /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79424C1DE0200FEB37E /* NetworkInterface.swift */; };
+		E641D79724C1DE3600FEB37E /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79624C1DE3600FEB37E /* RequestInfo.swift */; };
+		E641D79A24C1E5EB00FEB37E /* CategoryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +50,18 @@
 		E641D76B24C1CDBE00FEB37E /* Mind Valley AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mind Valley AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E641D76F24C1CDBE00FEB37E /* Mind_Valley_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mind_Valley_AppTests.swift; sourceTree = "<group>"; };
 		E641D77124C1CDBE00FEB37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChannelsViewController.storyboard; sourceTree = "<group>"; };
+		E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		E641D78424C1D5D000FEB37E /* BubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCell.swift; sourceTree = "<group>"; };
+		E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
+		E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInterface.swift; sourceTree = "<group>"; };
+		E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
+		E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepo.swift; sourceTree = "<group>"; };
+		E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsDao.swift; sourceTree = "<group>"; };
+		E641D79224C1DDED00FEB37E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E641D79424C1DE0200FEB37E /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		E641D79624C1DE3600FEB37E /* RequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
+		E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,8 @@
 		E641D75724C1CDBB00FEB37E /* Mind Valley App */ = {
 			isa = PBXGroup;
 			children = (
+				E641D79124C1DDC800FEB37E /* Network */,
+				E641D77A24C1D37B00FEB37E /* Channels component */,
 				E641D75824C1CDBB00FEB37E /* AppDelegate.swift */,
 				E641D75A24C1CDBB00FEB37E /* SceneDelegate.swift */,
 				E641D75C24C1CDBB00FEB37E /* ViewController.swift */,
@@ -97,6 +123,88 @@
 				E641D77124C1CDBE00FEB37E /* Info.plist */,
 			);
 			path = "Mind Valley AppTests";
+			sourceTree = "<group>";
+		};
+		E641D77A24C1D37B00FEB37E /* Channels component */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78924C1DB4700FEB37E /* ChannelsInterface.swift */,
+				E641D77E24C1D3C000FEB37E /* Dao */,
+				E641D79824C1E5D700FEB37E /* Entity */,
+				E641D77C24C1D3B700FEB37E /* Presenter */,
+				E641D77D24C1D3BC00FEB37E /* Repo */,
+				E641D78624C1DB1800FEB37E /* Router */,
+				E641D77B24C1D3B300FEB37E /* View */,
+			);
+			path = "Channels component";
+			sourceTree = "<group>";
+		};
+		E641D77B24C1D3B300FEB37E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78324C1D5B600FEB37E /* Cells */,
+				E641D77F24C1D3DB00FEB37E /* ChannelsViewController.storyboard */,
+				E641D78124C1D3F500FEB37E /* ChannelsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E641D77C24C1D3B700FEB37E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78B24C1DD2500FEB37E /* ChannelsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E641D77D24C1D3BC00FEB37E /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78D24C1DD7600FEB37E /* ChannelsRepo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		E641D77E24C1D3C000FEB37E /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78F24C1DD9400FEB37E /* ChannelsDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		E641D78324C1D5B600FEB37E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78424C1D5D000FEB37E /* BubbleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E641D78624C1DB1800FEB37E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E641D78724C1DB2500FEB37E /* ChannelsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E641D79124C1DDC800FEB37E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E641D79224C1DDED00FEB37E /* Network.swift */,
+				E641D79424C1DE0200FEB37E /* NetworkInterface.swift */,
+				E641D79624C1DE3600FEB37E /* RequestInfo.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E641D79824C1E5D700FEB37E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E641D79924C1E5EB00FEB37E /* CategoryEntities.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E641D76524C1CDBE00FEB37E /* LaunchScreen.storyboard in Resources */,
+				E641D78024C1D3DB00FEB37E /* ChannelsViewController.storyboard in Resources */,
 				E641D76224C1CDBE00FEB37E /* Assets.xcassets in Resources */,
 				E641D76024C1CDBB00FEB37E /* Main.storyboard in Resources */,
 			);
@@ -200,8 +309,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E641D78824C1DB2500FEB37E /* ChannelsRouter.swift in Sources */,
 				E641D75D24C1CDBB00FEB37E /* ViewController.swift in Sources */,
+				E641D79A24C1E5EB00FEB37E /* CategoryEntities.swift in Sources */,
+				E641D79024C1DD9400FEB37E /* ChannelsDao.swift in Sources */,
+				E641D79724C1DE3600FEB37E /* RequestInfo.swift in Sources */,
+				E641D78E24C1DD7600FEB37E /* ChannelsRepo.swift in Sources */,
+				E641D79524C1DE0200FEB37E /* NetworkInterface.swift in Sources */,
 				E641D75924C1CDBB00FEB37E /* AppDelegate.swift in Sources */,
+				E641D79324C1DDED00FEB37E /* Network.swift in Sources */,
+				E641D78524C1D5D000FEB37E /* BubbleCell.swift in Sources */,
+				E641D78A24C1DB4700FEB37E /* ChannelsInterface.swift in Sources */,
+				E641D78224C1D3F500FEB37E /* ChannelsViewController.swift in Sources */,
+				E641D78C24C1DD2500FEB37E /* ChannelsPresenter.swift in Sources */,
 				E641D75B24C1CDBB00FEB37E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
