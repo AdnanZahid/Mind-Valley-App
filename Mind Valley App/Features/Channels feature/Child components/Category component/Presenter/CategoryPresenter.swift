@@ -23,12 +23,12 @@ class CategoryPresenter {
 extension CategoryPresenter: CategoryPresenterProtocol {
     
     func didLoadView() {
-        loadCategories()
+        fetchItems()
     }
     
-    func loadCategories() {
-        repo.loadCategories(successHandler: { [weak self] categories in
-            self?.view?.setCategories(categories)
+    func fetchItems() {
+        repo.fetchItems(successHandler: { [weak self] items in
+            self?.view?.setCategories(items)
             }, failureHandler: { [weak self] in
                 self?.view?.showError()
         })

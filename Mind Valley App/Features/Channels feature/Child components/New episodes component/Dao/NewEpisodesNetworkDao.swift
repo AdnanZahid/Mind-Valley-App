@@ -1,5 +1,5 @@
 //
-//  NewEpisodesDao.swift
+//  NewEpisodesNetworkDao.swift
 //  Mind Valley App
 //
 //  Created by Adnan Zahid on 17/07/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NewEpisodesDao {
+class NewEpisodesNetworkDao {
     
     private enum Constants {
         static let urlPath = "z5AExTtw"
@@ -21,9 +21,9 @@ class NewEpisodesDao {
     }
 }
 
-extension NewEpisodesDao: NewEpisodesDaoProtocol {
+extension NewEpisodesNetworkDao: NewEpisodesNetworkDaoProtocol {
     
-    func loadNewEpisodes(successHandler: @escaping (Data) -> (),
+    func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {
         network.request(with: RequestInfo(urlPath: Constants.urlPath),
                         successHandler: successHandler,

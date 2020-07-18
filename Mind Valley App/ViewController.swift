@@ -10,19 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private enum Constants {
-        static let timeDelay = 1
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Constants.timeDelay)) {
-            ChannelsRouter().present(on: self, presentationMethod: .push)
-        }
+        setupChannelsView()
     }
     
     private func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    private func setupChannelsView() {
+        ChannelsRouter().present(on: self, presentationMethod: .push)
     }
 }

@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xUz-W6-foU">
-                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TmI-yo-rl1">
                                     <size key="itemSize" width="128" height="128"/>
@@ -72,21 +72,31 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="152" height="354"/>
                                         <connections>
-                                            <outlet property="channelNameLabel" destination="1fB-jB-sLG" id="3S3-YM-Fjs"/>
                                             <outlet property="imageView" destination="dDe-it-DrX" id="PjF-7W-7KC"/>
+                                            <outlet property="subtitleLabel" destination="1fB-jB-sLG" id="Juq-Nf-Nma"/>
                                             <outlet property="titleLabel" destination="5B5-Qr-347" id="COf-3c-DY4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKL-CM-qkI">
+                                <rect key="frame" x="10" y="861" width="394" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HMF-D7-woA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fWB-W3-mJg" firstAttribute="bottom" secondItem="xUz-W6-foU" secondAttribute="bottom" id="1Mn-72-ZWs"/>
+                            <constraint firstItem="ZKL-CM-qkI" firstAttribute="width" secondItem="UJY-YZ-C6l" secondAttribute="width" constant="-20" id="0wk-4Z-aMr"/>
                             <constraint firstItem="xUz-W6-foU" firstAttribute="centerX" secondItem="fWB-W3-mJg" secondAttribute="centerX" id="A0D-gm-Bcm"/>
+                            <constraint firstItem="ZKL-CM-qkI" firstAttribute="centerX" secondItem="fWB-W3-mJg" secondAttribute="centerX" id="F0h-7u-Gpy"/>
                             <constraint firstItem="3hZ-2u-Qn3" firstAttribute="top" secondItem="fWB-W3-mJg" secondAttribute="top" constant="30" id="Pda-34-nj4"/>
                             <constraint firstItem="xUz-W6-foU" firstAttribute="top" secondItem="3hZ-2u-Qn3" secondAttribute="bottom" constant="20" id="Wsx-gT-HPH"/>
+                            <constraint firstItem="fWB-W3-mJg" firstAttribute="bottom" secondItem="ZKL-CM-qkI" secondAttribute="bottom" id="a8g-w6-VWP"/>
                             <constraint firstItem="xUz-W6-foU" firstAttribute="width" secondItem="UJY-YZ-C6l" secondAttribute="width" id="aUy-tS-zu1"/>
+                            <constraint firstItem="ZKL-CM-qkI" firstAttribute="top" secondItem="xUz-W6-foU" secondAttribute="bottom" id="g5g-uO-kU1"/>
                             <constraint firstItem="3hZ-2u-Qn3" firstAttribute="leading" secondItem="fWB-W3-mJg" secondAttribute="leading" constant="20" id="y85-yG-mxE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWB-W3-mJg"/>
@@ -94,7 +104,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomSeparator" destination="ZKL-CM-qkI" id="4T8-RK-cOy"/>
                         <outlet property="collectionView" destination="xUz-W6-foU" id="kc1-RP-M5j"/>
+                        <outlet property="titleLabel" destination="3hZ-2u-Qn3" id="a7j-5e-yhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2z-iu-RuI" sceneMemberID="firstResponder"/>

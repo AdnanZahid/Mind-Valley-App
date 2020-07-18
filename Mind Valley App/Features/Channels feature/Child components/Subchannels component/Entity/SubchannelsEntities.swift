@@ -23,7 +23,7 @@ struct Subchannel: Codable {
     let title: String
     let series: [Series]
     let mediaCount: Int
-    let latestMedia: [LatestMedia]
+    let latestMedia: [Course]
     let id: String?
     let iconAsset: IconAsset?
     let coverAsset: SubchannelCoverAsset
@@ -47,7 +47,7 @@ struct IconAsset: Codable {
 }
 
 // MARK: - LatestMedia
-struct LatestMedia: Codable {
+struct Course: Codable {
     let type: TypeEnum
     let title: String
     let coverAsset: CoverAsset

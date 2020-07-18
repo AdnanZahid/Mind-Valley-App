@@ -14,21 +14,26 @@ protocol SubchannelsRouterProtocol: class {
 
 protocol SubchannelsPresenterProtocol: class {
     func didLoadView()
-    func loadSubchannels()
 }
 
 protocol SubchannelsViewProtocol: class {
     var presenter: SubchannelsPresenterProtocol? { get set }
-    func setSubchannels(_ Subchannels: [Subchannel])
+    func setItems(_ items: [UIViewController])
     func showError()
 }
 
 protocol SubchannelsRepoProtocol: class {
-    func loadSubchannels(successHandler: @escaping ([Subchannel]) -> (),
+    func fetchItems(successHandler: @escaping ([Subchannel]) -> (),
                          failureHandler: @escaping () -> ())
 }
 
-protocol SubchannelsDaoProtocol: class {
-    func loadSubchannels(successHandler: @escaping (Data) -> (),
+protocol SubchannelsNetworkDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ())
+}
+
+protocol SubchannelsMemoryDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                         failureHandler: @escaping () -> ())
+    func saveSubchannels(data: Data)
 }

@@ -23,12 +23,12 @@ class NewEpisodesPresenter {
 extension NewEpisodesPresenter: NewEpisodesPresenterProtocol {
     
     func didLoadView() {
-        loadNewEpisodes()
+        fetchItems()
     }
     
-    func loadNewEpisodes() {
-        repo.loadNewEpisodes(successHandler: { [weak self] newEpisodes in
-            self?.view?.setNewEpisodes(newEpisodes)
+    func fetchItems() {
+        repo.fetchItems(successHandler: { [weak self] items in
+            self?.view?.setNewEpisodes(items)
             }, failureHandler: { [weak self] in
                 self?.view?.showError()
         })

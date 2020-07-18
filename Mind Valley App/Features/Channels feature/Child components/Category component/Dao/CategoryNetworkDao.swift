@@ -1,5 +1,5 @@
 //
-//  SubchannelsDao.swift
+//  CategoryNetworkDao.swift
 //  Mind Valley App
 //
 //  Created by Adnan Zahid on 17/07/2020.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class SubchannelsDao {
+class CategoryNetworkDao {
     
     private enum Constants {
-        static let urlPath = "Xt12uVhM"
+        static let urlPath = "A0CgArX3"
     }
     
     let network: NetworkProtocol
@@ -21,10 +21,10 @@ class SubchannelsDao {
     }
 }
 
-extension SubchannelsDao: SubchannelsDaoProtocol {
+extension CategoryNetworkDao: CategoryNetworkDaoProtocol {
     
-    func loadSubchannels(successHandler: @escaping (Data) -> (),
-                         failureHandler: @escaping () -> ()) {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                        failureHandler: @escaping () -> ()) {
         network.request(with: RequestInfo(urlPath: Constants.urlPath),
                         successHandler: successHandler,
                         failureHandler: failureHandler)

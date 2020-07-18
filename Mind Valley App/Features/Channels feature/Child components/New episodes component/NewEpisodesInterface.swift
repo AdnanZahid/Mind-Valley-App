@@ -14,21 +14,27 @@ protocol NewEpisodesRouterProtocol: class {
 
 protocol NewEpisodesPresenterProtocol: class {
     func didLoadView()
-    func loadNewEpisodes()
+    func fetchItems()
 }
 
 protocol NewEpisodesViewProtocol: class {
     var presenter: NewEpisodesPresenterProtocol? { get set }
-    func setNewEpisodes(_ newEpisodes: [NewEpisode])
+    func setNewEpisodes(_ items: [NewEpisode])
     func showError()
 }
 
 protocol NewEpisodesRepoProtocol: class {
-    func loadNewEpisodes(successHandler: @escaping ([NewEpisode]) -> (),
+    func fetchItems(successHandler: @escaping ([NewEpisode]) -> (),
                          failureHandler: @escaping () -> ())
 }
 
-protocol NewEpisodesDaoProtocol: class {
-    func loadNewEpisodes(successHandler: @escaping (Data) -> (),
+protocol NewEpisodesNetworkDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ())
+}
+
+protocol NewEpisodesMemoryDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                         failureHandler: @escaping () -> ())
+    func saveNewEpisodes(data: Data)
 }

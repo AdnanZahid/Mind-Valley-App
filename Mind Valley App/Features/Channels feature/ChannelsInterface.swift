@@ -9,13 +9,12 @@
 import UIKit
 
 protocol ChannelsPresenterProtocol {
-    func getNewEpisodesView() -> UIViewController
-    func getSubchannelsView() -> UIViewController
-    func getCategoryView() -> UIViewController
+    func didLoadView()
 }
 
 protocol ChannelsViewProtocol: class {
     var presenter: ChannelsPresenterProtocol? { get set }
+    func setItems(_ items: [UIViewController])
 }
 
 protocol ChannelsRouterProtocol {

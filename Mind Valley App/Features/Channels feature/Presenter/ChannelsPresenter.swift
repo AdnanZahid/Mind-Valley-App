@@ -28,15 +28,25 @@ class ChannelsPresenter {
 
 extension ChannelsPresenter: ChannelsPresenterProtocol {
     
-    func getNewEpisodesView() -> UIViewController {
+    func didLoadView() {
+        setItems()
+    }
+    
+    private func setItems() {
+        view?.setItems([getNewEpisodesView(),
+                        getSubchannelsView(),
+                        getCategoryView()])
+    }
+    
+    private func getNewEpisodesView() -> UIViewController {
         return newEpisodesRouter.getView()
     }
     
-    func getSubchannelsView() -> UIViewController {
+    private func getSubchannelsView() -> UIViewController {
         return subchannelsRouter.getView()
     }
     
-    func getCategoryView() -> UIViewController {
+    private func getCategoryView() -> UIViewController {
         return categoryRouter.getView()
     }
 }
