@@ -20,8 +20,9 @@ class ChannelsRouter {
 extension ChannelsRouter: ChannelsRouterProtocol {
     
     func present(on viewController: UIViewController, presentationMethod: PresentationMethod) {
-        let view = ChannelsViewController()
-        self.view = view
+        guard let view = UIStoryboard(name: "ChannelsViewController",
+                                      bundle: nil).instantiateInitialViewController() else { return }
+        self.view = view as? ChannelsViewProtocol
         let presenter = ChannelsPresenter(view: self.view)
         self.view?.presenter = presenter
         switch presentationMethod {

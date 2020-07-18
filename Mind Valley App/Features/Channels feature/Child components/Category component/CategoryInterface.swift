@@ -18,16 +18,22 @@ protocol CategoryPresenterProtocol: class {
 
 protocol CategoryViewProtocol: class {
     var presenter: CategoryPresenterProtocol? { get set }
-    func setCategories(_ categories: [Category])
+    func setCategories(_ items: [Category])
     func showError()
 }
 
 protocol CategoryRepoProtocol: class {
-    func loadCategories(successHandler: @escaping ([Category]) -> (),
+    func fetchItems(successHandler: @escaping ([Category]) -> (),
                         failureHandler: @escaping () -> ())
 }
 
-protocol CategoryDaoProtocol: class {
-    func loadCategories(successHandler: @escaping (Data) -> (),
+protocol CategoryNetworkDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
                         failureHandler: @escaping () -> ())
+}
+
+protocol CategoryMemoryDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                        failureHandler: @escaping () -> ())
+    func saveCategories(data: Data)
 }

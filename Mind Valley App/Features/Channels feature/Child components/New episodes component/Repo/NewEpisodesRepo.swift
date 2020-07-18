@@ -7,27 +7,49 @@
 //
 
 import Foundation
+import Network
 
 class NewEpisodesRepo {
     
-    let dao: NewEpisodesDaoProtocol
+    private let networkDao: NewEpisodesNetworkDaoProtocol
+    private let memoryDao: NewEpisodesMemoryDaoProtocol
+    private let networkMonitor = NWPathMonitor()
     
-    init(dao: NewEpisodesDaoProtocol = NewEpisodesDao()) {
-        self.dao = dao
+    init(networkDao: NewEpisodesNetworkDaoProtocol = NewEpisodesNetworkDao(),
+         memoryDao: NewEpisodesMemoryDaoProtocol = NewEpisodesMemoryDao()) {
+        self.networkDao = networkDao
+        self.memoryDao = memoryDao
     }
 }
 
 extension NewEpisodesRepo: NewEpisodesRepoProtocol {
     
-    func loadNewEpisodes(successHandler: @escaping ([NewEpisode]) -> (),
+    func fetchItems(successHandler: @escaping ([NewEpisode]) -> (),
                          failureHandler: @escaping () -> ()) {
-        dao.loadNewEpisodes(successHandler: { data in
-            do {
-                let newEpisodes = try JSONDecoder().decode(NewEpisodesList.self, from: data)
-                successHandler(newEpisodes.data.media)
-            } catch _ {
-                failureHandler()
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            // If network is available, make a network call
+            if path.status == .satisfied {
+                self?.networkDao.fetchItems(successHandler: { [weak self] data in
+                    do {
+                        let items = try JSONDecoder().decode(NewEpisodesList.self, from: data)
+                        successHandler(items.data.media)
+                        self?.memoryDao.saveNewEpisodes(data: data)
+                    } catch _ {
+                        failureHandler()
+                    }
+                    }, failureHandler: failureHandler)
+            } else {
+                // Otherwise load data from the file (if available)
+                self?.memoryDao.fetchItems(successHandler: { data in
+                    do {
+                        let items = try JSONDecoder().decode(NewEpisodesList.self, from: data)
+                        successHandler(items.data.media)
+                    } catch _ {
+                        failureHandler()
+                    }
+                }, failureHandler: failureHandler)
             }
-        }, failureHandler: failureHandler)
+        }
+        networkMonitor.start(queue: DispatchQueue.global(qos: .background))
     }
 }

@@ -13,62 +13,77 @@ class SubchannelsViewController: UIViewController {
     private enum Constants {
         static let numberOfColumns = 2
         static let cellIdentifier = "SubchannelsCell"
+        enum Error {
+            static let title = "Error"
+            static let message = "Something unexpected happened"
+            static let buttonTitle = "Dismiss"
+        }
     }
     
     var presenter: SubchannelsPresenterProtocol?
-    private var subchannels: [Subchannel] = []
-    @IBOutlet private weak var collectionView: UICollectionView!
+    private var items: [UIViewController] = []
+    @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSubchannelsCollectionView()
-        presenter?.didLoadView()
+        setupBackground()
+        setupTableView()
+        setupPresenter()
     }
     
-    private func setupSubchannelsCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    private func setupBackground() {
+        view.backgroundColor = .clear
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .clear
+    }
+    
+    private func setupPresenter() {
+        presenter?.didLoadView()
     }
 }
 
-extension SubchannelsViewController: UICollectionViewDataSource {
+extension SubchannelsViewController: UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return subchannels.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                                            for: indexPath) as? SubchannelsCell else { return UICollectionViewCell() }
-        let item = subchannels[indexPath.row]
-        cell.setup(title: item.title, imageUrl: item.coverAsset.url)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let childView = items[indexPath.row]
+        addChild(childView)
+        cell.contentView.addSubview(childView.view)
+        cell.backgroundColor = .clear
         return cell
     }
 }
 
-extension SubchannelsViewController: UICollectionViewDelegateFlowLayout {
+extension SubchannelsViewController: UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
-        let space = flowLayout.minimumInteritemSpacing + flowLayout.sectionInset.left + flowLayout.sectionInset.right
-        let size = (collectionView.frame.size.width - space) / CGFloat(Constants.numberOfColumns)
-        return CGSize(width: size, height: size)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 2000
     }
 }
 
 extension SubchannelsViewController: SubchannelsViewProtocol {
     
-    func setSubchannels(_ subchannels: [Subchannel]) {
-        self.subchannels = subchannels
-        collectionView.reloadData()
+    func setItems(_ items: [UIViewController]) {
+        self.items = items
+        tableView.reloadData()
     }
     
     func showError() {
-        let error = UIAlertController(title: "Error",
-                                      message: "Something unexpected happened",
-                                      preferredStyle: .actionSheet)
+        guard let visibleViewController = navigationController?.visibleViewController,
+            !(visibleViewController is UIAlertController) else { return }
+        let error = UIAlertController(title: Constants.Error.title,
+                                      message: Constants.Error.message,
+                                      preferredStyle: .alert)
+        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
+                                      style: .default))
         present(error, animated: true)
     }
 }

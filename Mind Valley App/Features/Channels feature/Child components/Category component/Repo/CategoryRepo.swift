@@ -7,27 +7,49 @@
 //
 
 import Foundation
+import Network
 
 class CategoryRepo {
     
-    let dao: CategoryDaoProtocol
+    private let networkDao: CategoryNetworkDaoProtocol
+    private let memoryDao: CategoryMemoryDaoProtocol
+    private let networkMonitor = NWPathMonitor()
     
-    init(dao: CategoryDaoProtocol = CategoryDao()) {
-        self.dao = dao
+    init(networkDao: CategoryNetworkDaoProtocol = CategoryNetworkDao(),
+         memoryDao: CategoryMemoryDaoProtocol = CategoryMemoryDao()) {
+        self.networkDao = networkDao
+        self.memoryDao = memoryDao
     }
 }
 
 extension CategoryRepo: CategoryRepoProtocol {
     
-    func loadCategories(successHandler: @escaping ([Category]) -> (),
+    func fetchItems(successHandler: @escaping ([Category]) -> (),
                         failureHandler: @escaping () -> ()) {
-        dao.loadCategories(successHandler: { data in
-            do {
-                let categories = try JSONDecoder().decode(CategoriesList.self, from: data)
-                successHandler(categories.data.categories)
-            } catch _ {
-                failureHandler()
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            // If network is available, make a network call
+            if path.status == .satisfied {
+                self?.networkDao.fetchItems(successHandler: { [weak self] data in
+                    do {
+                        let items = try JSONDecoder().decode(CategoriesList.self, from: data)
+                        successHandler(items.data.categories)
+                        self?.memoryDao.saveCategories(data: data)
+                    } catch _ {
+                        failureHandler()
+                    }
+                    }, failureHandler: failureHandler)
+            } else {
+                // Otherwise load data from the file (if available)
+                self?.memoryDao.fetchItems(successHandler: { data in
+                    do {
+                        let items = try JSONDecoder().decode(CategoriesList.self, from: data)
+                        successHandler(items.data.categories)
+                    } catch _ {
+                        failureHandler()
+                    }
+                }, failureHandler: failureHandler)
             }
-        }, failureHandler: failureHandler)
+        }
+        networkMonitor.start(queue: DispatchQueue.global(qos: .background))
     }
 }

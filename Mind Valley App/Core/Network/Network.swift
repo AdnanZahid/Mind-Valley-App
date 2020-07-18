@@ -24,12 +24,10 @@ extension Network: NetworkProtocol {
         let session = URLSession.shared
         DispatchQueue.global(qos: .background).async {
             let task = session.dataTask(with: request as URLRequest) { data, response, error in
-                if error != nil {
-                    DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    if error != nil {
                         failureHandler()
-                    }
-                } else if let data = data {
-                    DispatchQueue.main.async {
+                    } else if let data = data {
                         successHandler(data)
                     }
                 }
