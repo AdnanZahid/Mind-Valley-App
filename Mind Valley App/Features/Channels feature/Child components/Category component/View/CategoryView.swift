@@ -1,22 +1,22 @@
 //
-//  NewEpisodesViewController.swift
+//  CategoryView.swift
 //  Mind Valley App
 //
-//  Created by Adnan Zahid on 17/07/2020.
+//  Created by Adnan Zahid on 20/07/2020.
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
 
 import UIKit
 
-class NewEpisodesViewController: UIViewController {
+class CategoryView: UITableViewCell {
     
     private enum Constants {
         static let numberOfColumns = 2
-        static let cellIdentifier = "NewEpisodesCell"
-        static let cellWidth: CGFloat = 152
-        static let cellHeight: CGFloat = 354
+        static let cellWidth: CGFloat = 172
+        static let cellHeight: CGFloat = 76
+        static let cellIdentifier = "CategoryCell"
         enum TitleProperties {
-            static let text = "New Episodes"
+            static let text = "Browse by items"
             enum Font {
                 static let style = FontKit.Style.normal
                 static let family = FontKit.Family.roboto
@@ -30,14 +30,6 @@ class NewEpisodesViewController: UIViewController {
                 static let alpha: CGFloat = 1.0
             }
         }
-        enum SeparatorProperties {
-            enum Color {
-                static let red: CGFloat = 60/255
-                static let green: CGFloat = 67/255
-                static let blue: CGFloat = 78/255
-                static let alpha: CGFloat = 1.0
-            }
-        }
         enum Error {
             static let title = "Error"
             static let message = "Something unexpected happened"
@@ -45,23 +37,20 @@ class NewEpisodesViewController: UIViewController {
         }
     }
     
-    var presenter: NewEpisodesPresenterProtocol?
-    private var items: [NewEpisode] = []
+    var presenter: CategoryPresenterProtocol?
+    private var items: [Category] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var bottomSeparator: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setup() {
         setupBackground()
         setupTitleLabel()
-        setupCollectionView()
-        setupBottomSeparator()
+        setupCategoriesCollectionView()
         setupPresenter()
     }
     
     private func setupBackground() {
-        view.backgroundColor = .clear
+        backgroundColor = .clear
     }
     
     private func setupTitleLabel() {
@@ -76,21 +65,14 @@ class NewEpisodesViewController: UIViewController {
                                        size: Constants.TitleProperties.Font.size)
     }
     
-    private func setupCollectionView() {
+    private func setupCategoriesCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
         collectionView.collectionViewLayout = layout
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .clear
-    }
-    
-    private func setupBottomSeparator() {
-        bottomSeparator.backgroundColor = UIColor(red: Constants.SeparatorProperties.Color.red,
-                                                  green: Constants.SeparatorProperties.Color.green,
-                                                  blue: Constants.SeparatorProperties.Color.blue,
-                                                  alpha: Constants.SeparatorProperties.Color.alpha)
     }
     
     private func setupPresenter() {
@@ -98,7 +80,7 @@ class NewEpisodesViewController: UIViewController {
     }
 }
 
-extension NewEpisodesViewController: UICollectionViewDataSource {
+extension CategoryView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
@@ -106,37 +88,39 @@ extension NewEpisodesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                                            for: indexPath) as? NewEpisodesCell else { return UICollectionViewCell() }
-        let item = items[indexPath.row]
-        cell.setup(title: item.title, subtitle: item.channel.title, imageUrl: item.coverAsset.url)
+                                                            for: indexPath) as? CategoryCell else { return UICollectionViewCell() }
+        cell.setup(title: items[indexPath.row].name)
         return cell
     }
 }
 
-extension NewEpisodesViewController: UICollectionViewDelegateFlowLayout {
+extension CategoryView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
+        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return .zero }
+        let space = flowLayout.minimumInteritemSpacing + flowLayout.sectionInset.left + flowLayout.sectionInset.right
+        let size = (collectionView.frame.size.width - space) / CGFloat(Constants.numberOfColumns)
+        return CGSize(width: size, height: Constants.cellHeight)
     }
 }
 
-extension NewEpisodesViewController: NewEpisodesViewProtocol {
+extension CategoryView: CategoryViewProtocol {
     
-    func setNewEpisodes(_ items: [NewEpisode]) {
+    func setCategories(_ items: [Category]) {
         self.items = items
         collectionView.reloadData()
     }
     
     func showError() {
-        guard let visibleViewController = navigationController?.visibleViewController,
-            !(visibleViewController is UIAlertController) else { return }
-        let error = UIAlertController(title: Constants.Error.title,
-                                      message: Constants.Error.message,
-                                      preferredStyle: .alert)
-        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
-                                      style: .default))
-        present(error, animated: true)
+        //        guard let visibleViewController = navigationController?.visibleViewController,
+        //            !(visibleViewController is UIAlertController) else { return }
+        //        let error = UIAlertController(title: Constants.Error.title,
+        //                                      message: Constants.Error.message,
+        //                                      preferredStyle: .alert)
+        //        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
+        //                                      style: .default))
+        //        present(error, animated: true)
     }
 }

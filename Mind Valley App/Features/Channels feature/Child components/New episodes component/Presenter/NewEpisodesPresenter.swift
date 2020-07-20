@@ -10,17 +10,15 @@ import UIKit
 
 class NewEpisodesPresenter {
     
-    private weak var view: NewEpisodesViewProtocol?
-    private var repo: NewEpisodesRepoProtocol
+    weak var view: ChannelsItemViewProtocol?
+    private var repo: ChannelsItemRepoProtocol
     
-    init(view: NewEpisodesViewProtocol?,
-         repo: NewEpisodesRepoProtocol = NewEpisodesRepo()) {
-        self.view = view
+    init(repo: ChannelsItemRepoProtocol = NewEpisodesRepo()) {
         self.repo = repo
     }
 }
 
-extension NewEpisodesPresenter: NewEpisodesPresenterProtocol {
+extension NewEpisodesPresenter: ChannelsItemPresenterProtocol {
     
     func didLoadView() {
         fetchItems()
@@ -28,7 +26,7 @@ extension NewEpisodesPresenter: NewEpisodesPresenterProtocol {
     
     func fetchItems() {
         repo.fetchItems(successHandler: { [weak self] items in
-            self?.view?.setNewEpisodes(items)
+            self?.view?.setItems(items)
             }, failureHandler: { [weak self] in
                 self?.view?.showError()
         })

@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CategoryRouterProtocol: class {
-    func getView() -> UIViewController
-}
-
 protocol CategoryPresenterProtocol: class {
     func didLoadView()
 }

@@ -21,7 +21,7 @@ class NewEpisodesMemoryDao {
     }
 }
 
-extension NewEpisodesMemoryDao: NewEpisodesMemoryDaoProtocol {
+extension NewEpisodesMemoryDao: ChannelsItemMemoryDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {
@@ -30,7 +30,7 @@ extension NewEpisodesMemoryDao: NewEpisodesMemoryDaoProtocol {
                               failureHandler: failureHandler)
     }
     
-    func saveNewEpisodes(data: Data) {
+    func saveItems(data: Data) {
         memoryHandler.save(with: RequestInfo(urlPath: Constants.urlPath), data: data)
     }
 }

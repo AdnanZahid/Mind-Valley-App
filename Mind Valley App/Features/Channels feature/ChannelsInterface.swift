@@ -8,15 +8,31 @@
 
 import UIKit
 
-protocol ChannelsPresenterProtocol {
+typealias IdentifierItemsPair = (identifier: String, items: [Codable])
+
+protocol ChannelsItemPresenterProtocol: class {
     func didLoadView()
 }
 
-protocol ChannelsViewProtocol: class {
-    var presenter: ChannelsPresenterProtocol? { get set }
-    func setItems(_ items: [UIViewController])
+protocol ChannelsItemViewProtocol: class {
+    var presenter: ChannelsItemPresenterProtocol? { get set }
+    func setup(presenter: ChannelsItemPresenterProtocol)
+    func setItems(_ items: [Any])
+    func showError()
 }
 
-protocol ChannelsRouterProtocol {
-    func present(on viewController: UIViewController, presentationMethod: PresentationMethod)
+protocol ChannelsItemRepoProtocol: class {
+    func fetchItems(successHandler: @escaping ([Codable]) -> (),
+                    failureHandler: @escaping () -> ())
+}
+
+protocol ChannelsItemNetworkDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                    failureHandler: @escaping () -> ())
+}
+
+protocol ChannelsItemMemoryDaoProtocol: class {
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                    failureHandler: @escaping () -> ())
+    func saveItems(data: Data)
 }

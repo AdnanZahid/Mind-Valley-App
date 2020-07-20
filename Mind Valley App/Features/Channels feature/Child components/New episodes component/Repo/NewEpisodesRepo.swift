@@ -11,20 +11,20 @@ import Network
 
 class NewEpisodesRepo {
     
-    private let networkDao: NewEpisodesNetworkDaoProtocol
-    private let memoryDao: NewEpisodesMemoryDaoProtocol
+    private let networkDao: ChannelsItemNetworkDaoProtocol
+    private let memoryDao: ChannelsItemMemoryDaoProtocol
     private let networkMonitor = NWPathMonitor()
     
-    init(networkDao: NewEpisodesNetworkDaoProtocol = NewEpisodesNetworkDao(),
-         memoryDao: NewEpisodesMemoryDaoProtocol = NewEpisodesMemoryDao()) {
+    init(networkDao: ChannelsItemNetworkDaoProtocol = NewEpisodesNetworkDao(),
+         memoryDao: ChannelsItemMemoryDaoProtocol = NewEpisodesMemoryDao()) {
         self.networkDao = networkDao
         self.memoryDao = memoryDao
     }
 }
 
-extension NewEpisodesRepo: NewEpisodesRepoProtocol {
+extension NewEpisodesRepo: ChannelsItemRepoProtocol {
     
-    func fetchItems(successHandler: @escaping ([NewEpisode]) -> (),
+    func fetchItems(successHandler: @escaping ([Codable]) -> (),
                          failureHandler: @escaping () -> ()) {
         networkMonitor.pathUpdateHandler = { [weak self] path in
             // If network is available, make a network call
@@ -33,7 +33,7 @@ extension NewEpisodesRepo: NewEpisodesRepoProtocol {
                     do {
                         let items = try JSONDecoder().decode(NewEpisodesList.self, from: data)
                         successHandler(items.data.media)
-                        self?.memoryDao.saveNewEpisodes(data: data)
+                        self?.memoryDao.saveItems(data: data)
                     } catch _ {
                         failureHandler()
                     }

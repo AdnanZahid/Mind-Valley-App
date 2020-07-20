@@ -10,29 +10,21 @@ import UIKit
 
 class SubchannelsPresenter {
     
-    private weak var view: SubchannelsViewProtocol?
-    private var repo: SubchannelsRepoProtocol
-    private var coursesRouter: CoursesRouterProtocol
-    private var seriesRouter: SeriesRouterProtocol
+    weak var view: ChannelsItemViewProtocol?
+    private var repo: ChannelsItemRepoProtocol
     
-    init(view: SubchannelsViewProtocol?,
-         repo: SubchannelsRepoProtocol = SubchannelsRepo(),
-         coursesRouter: CoursesRouterProtocol = CoursesRouter(),
-         seriesRouter: SeriesRouterProtocol = SeriesRouter()) {
-        self.view = view
+    init(repo: ChannelsItemRepoProtocol = SubchannelsRepo()) {
         self.repo = repo
-        self.coursesRouter = coursesRouter
-        self.seriesRouter = seriesRouter
     }
 }
 
-extension SubchannelsPresenter: SubchannelsPresenterProtocol {
+extension SubchannelsPresenter: ChannelsItemPresenterProtocol {
     
     func didLoadView() {
         fetchItems()
     }
     
-    private func fetchItems() {
+    func fetchItems() {
         repo.fetchItems(successHandler: { [weak self] items in
             self?.setItems(items)
             }, failureHandler: { [weak self] in
@@ -40,21 +32,22 @@ extension SubchannelsPresenter: SubchannelsPresenterProtocol {
         })
     }
     
-    private func setItems(_ items: [Subchannel]) {
-        let courses = items.filter { $0.series.isEmpty }.map { $0.latestMedia }
-        let series = items.filter { !$0.series.isEmpty }.map { $0.series }
-        let items = [courses.map { [weak self] in self?.getCoursesView($0) },
-                     series.map { [weak self] in self?.getSeriesView($0) }]
+    private func setItems(_ items: [Any]) {
+        guard let subchannels = items as? [Subchannel] else { return }
+        let courses = subchannels.filter { $0.series.isEmpty }.map { $0.latestMedia }
+        let series = subchannels.filter { !$0.series.isEmpty }.map { $0.series }
+        let items = [courses.map { [weak self] in self?.getCoursesViewIdentifier($0) },
+                     series.map { [weak self] in self?.getSeriesViewIdentifier($0) }]
             .flatMap { $0 }
             .compactMap { $0 }
         view?.setItems(items)
     }
     
-    private func getCoursesView(_ courses: [Course]) -> UIViewController {
-        return coursesRouter.getView(courses: courses)
+    private func getCoursesViewIdentifier(_ courses: [Course]) -> IdentifierItemsPair {
+        return ("CoursesView", courses)
     }
     
-    private func getSeriesView(_ series: [Series]) -> UIViewController {
-        return seriesRouter.getView(series: series)
+    private func getSeriesViewIdentifier(_ series: [Series]) -> IdentifierItemsPair {
+        return ("SeriesView", series)
     }
 }

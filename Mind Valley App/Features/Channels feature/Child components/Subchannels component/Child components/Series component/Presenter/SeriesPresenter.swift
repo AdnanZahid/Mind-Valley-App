@@ -5,28 +5,27 @@
 //  Created by Adnan Zahid on 17/07/2020.
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
-
 import UIKit
 
 class SeriesPresenter {
     
-    private weak var view: SeriesViewProtocol?
-    private let series: [Series]
+    private weak var view: ChannelsItemViewProtocol?
+    private let items: [Codable]
     
-    init(view: SeriesViewProtocol?,
-         series: [Series]) {
+    init(view: ChannelsItemViewProtocol?,
+         items: [Codable]) {
         self.view = view
-        self.series = series
+        self.items = items
     }
 }
 
-extension SeriesPresenter: SeriesPresenterProtocol {
+extension SeriesPresenter: ChannelsItemPresenterProtocol {
     
     func didLoadView() {
-        setCourses()
+        fetchItems()
     }
     
-    private func setCourses() {
-        view?.setSeries(series)
+    func fetchItems() {
+        view?.setItems(items)
     }
 }

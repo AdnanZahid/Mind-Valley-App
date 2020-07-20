@@ -10,12 +10,10 @@ import UIKit
 
 class CategoryPresenter {
     
-    private weak var view: CategoryViewProtocol?
+    weak var view: CategoryViewProtocol?
     private var repo: CategoryRepoProtocol
     
-    init(view: CategoryViewProtocol?,
-         repo: CategoryRepoProtocol = CategoryRepo()) {
-        self.view = view
+    init(repo: CategoryRepoProtocol = CategoryRepo()) {
         self.repo = repo
     }
 }

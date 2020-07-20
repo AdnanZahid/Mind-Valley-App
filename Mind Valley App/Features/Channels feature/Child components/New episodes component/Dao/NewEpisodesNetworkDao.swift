@@ -21,7 +21,7 @@ class NewEpisodesNetworkDao {
     }
 }
 
-extension NewEpisodesNetworkDao: NewEpisodesNetworkDaoProtocol {
+extension NewEpisodesNetworkDao: ChannelsItemNetworkDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {

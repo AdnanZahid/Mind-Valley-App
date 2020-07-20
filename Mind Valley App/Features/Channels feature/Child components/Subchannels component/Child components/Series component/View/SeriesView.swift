@@ -1,5 +1,5 @@
 //
-//  SeriesViewController.swift
+//  SeriesView.swift
 //  Mind Valley App
 //
 //  Created by Adnan Zahid on 17/07/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeriesViewController: UIViewController {
+class SeriesView: UITableViewCell {
     
     private enum Constants {
         static let numberOfColumns = 2
@@ -53,26 +53,25 @@ class SeriesViewController: UIViewController {
         }
     }
     
-    var presenter: SeriesPresenterProtocol?
-    private var series: [Series] = []
+    var presenter: ChannelsItemPresenterProtocol?
+    private var items: [Codable] = []
     @IBOutlet private weak var iconView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var bottomSeparator: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setup(presenter: ChannelsItemPresenterProtocol) {
         setupBackground()
         setupTitleLabel()
         setupSubtitleLabel()
         setupCollectionView()
         setupBottomSeparator()
-        setupPresenter()
+        setupPresenter(presenter: presenter)
     }
     
     private func setupBackground() {
-        view.backgroundColor = .clear
+        backgroundColor = .clear
     }
     
     private func setupTitleLabel() {
@@ -113,27 +112,28 @@ class SeriesViewController: UIViewController {
                                                   alpha: Constants.SeparatorProperties.Color.alpha)
     }
     
-    private func setupPresenter() {
-        presenter?.didLoadView()
+    private func setupPresenter(presenter: ChannelsItemPresenterProtocol) {
+        self.presenter = presenter
+        presenter.didLoadView()
     }
 }
 
-extension SeriesViewController: UICollectionViewDataSource {
+extension SeriesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return series.count
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                                            for: indexPath) as? SeriesCell else { return UICollectionViewCell() }
-        let item = series[indexPath.row]
+                                                            for: indexPath) as? SeriesCell,
+            let item = items[indexPath.row] as? Series else { return UICollectionViewCell() }
         cell.setup(title: item.title, imageUrl: item.coverAsset.url)
         return cell
     }
 }
 
-extension SeriesViewController: UICollectionViewDelegateFlowLayout {
+extension SeriesView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -142,21 +142,22 @@ extension SeriesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension SeriesViewController: SeriesViewProtocol {
+extension SeriesView: ChannelsItemViewProtocol {
     
-    func setSeries(_ series: [Series]) {
-        self.series = series
+    func setItems(_ items: [Any]) {
+        guard let items = items as? [Codable] else { return }
+        self.items = items
         collectionView.reloadData()
     }
     
     func showError() {
-        guard let visibleViewController = navigationController?.visibleViewController,
-            !(visibleViewController is UIAlertController) else { return }
-        let error = UIAlertController(title: "Error",
-                                      message: "Something unexpected happened",
-                                      preferredStyle: .alert)
-        error.addAction(UIAlertAction(title: "Dismiss",
-                                      style: .default))
-        present(error, animated: true)
+        //        guard let visibleViewController = navigationController?.visibleViewController,
+        //            !(visibleViewController is UIAlertController) else { return }
+        //        let error = UIAlertController(title: "Error",
+        //                                      message: "Something unexpected happened",
+        //                                      preferredStyle: .alert)
+        //        error.addAction(UIAlertAction(title: "Dismiss",
+        //                                      style: .default))
+        //        present(error, animated: true)
     }
 }

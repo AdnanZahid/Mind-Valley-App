@@ -35,7 +35,7 @@ class ChannelsViewController: UIViewController {
     }
     
     var presenter: ChannelsPresenterProtocol?
-    private var items: [UIViewController] = []
+    private var items: [String] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -68,11 +68,19 @@ class ChannelsViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.delegate = self
-        //        tableView.estimatedRowHeight = 300.0
-        //        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 500.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.register(UINib.init(nibName: String(describing: NewEpisodesView.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: NewEpisodesView.self))
+        tableView.register(UINib.init(nibName: String(describing: SubchannelsView.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: SubchannelsView.self))
+        tableView.register(UINib.init(nibName: String(describing: CategoryView.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: CategoryView.self))
     }
     
     private func setupPresenter() {
@@ -87,25 +95,17 @@ extension ChannelsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let childView = items[indexPath.row]
-        addChild(childView)
-        cell.contentView.addSubview(childView.view)
-        cell.backgroundColor = .clear
+        let identifier = items[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else { return UITableViewCell() }
+        let view = cell as? ChannelsItemViewProtocol
+        view?.setup(presenter: NewEpisodesPresenter(view: view))
         return cell
-    }
-}
-
-extension ChannelsViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 5000
     }
 }
 
 extension ChannelsViewController: ChannelsViewProtocol {
     
-    func setItems(_ items: [UIViewController]) {
+    func setItems(_ items: [String]) {
         self.items = items
         tableView.reloadData()
     }

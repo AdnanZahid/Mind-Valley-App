@@ -21,7 +21,7 @@ class SubchannelsMemoryDao {
     }
 }
 
-extension SubchannelsMemoryDao: SubchannelsMemoryDaoProtocol {
+extension SubchannelsMemoryDao: ChannelsItemMemoryDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {
@@ -30,7 +30,7 @@ extension SubchannelsMemoryDao: SubchannelsMemoryDaoProtocol {
                               failureHandler: failureHandler)
     }
     
-    func saveSubchannels(data: Data) {
+    func saveItems(data: Data) {
         memoryHandler.save(with: RequestInfo(urlPath: Constants.urlPath), data: data)
     }
 }

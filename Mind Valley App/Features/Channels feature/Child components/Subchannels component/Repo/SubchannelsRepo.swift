@@ -11,20 +11,20 @@ import Network
 
 class SubchannelsRepo {
     
-    private let networkDao: SubchannelsNetworkDaoProtocol
-    private let memoryDao: SubchannelsMemoryDaoProtocol
+    private let networkDao: ChannelsItemNetworkDaoProtocol
+    private let memoryDao: ChannelsItemMemoryDaoProtocol
     private let networkMonitor = NWPathMonitor()
     
-    init(networkDao: SubchannelsNetworkDaoProtocol = SubchannelsNetworkDao(),
-         memoryDao: SubchannelsMemoryDaoProtocol = SubchannelsMemoryDao()) {
+    init(networkDao: ChannelsItemNetworkDaoProtocol = SubchannelsNetworkDao(),
+         memoryDao: ChannelsItemMemoryDaoProtocol = SubchannelsMemoryDao()) {
         self.networkDao = networkDao
         self.memoryDao = memoryDao
     }
 }
 
-extension SubchannelsRepo: SubchannelsRepoProtocol {
+extension SubchannelsRepo: ChannelsItemRepoProtocol {
     
-    func fetchItems(successHandler: @escaping ([Subchannel]) -> (),
+    func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ()) {
         networkMonitor.pathUpdateHandler = { [weak self] path in
             // If network is available, make a network call
@@ -33,7 +33,7 @@ extension SubchannelsRepo: SubchannelsRepoProtocol {
                     do {
                         let items = try JSONDecoder().decode(SubchannelsList.self, from: data)
                         successHandler(items.data.channels)
-                        self?.memoryDao.saveSubchannels(data: data)
+                        self?.memoryDao.saveItems(data: data)
                     } catch _ {
                         failureHandler()
                     }
