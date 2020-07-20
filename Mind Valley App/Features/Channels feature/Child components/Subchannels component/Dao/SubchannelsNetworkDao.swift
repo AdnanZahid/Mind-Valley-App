@@ -21,7 +21,7 @@ class SubchannelsNetworkDao {
     }
 }
 
-extension SubchannelsNetworkDao: ChannelsItemNetworkDaoProtocol {
+extension SubchannelsNetworkDao: NetworkDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {

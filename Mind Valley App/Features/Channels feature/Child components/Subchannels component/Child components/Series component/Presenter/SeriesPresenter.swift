@@ -9,17 +9,19 @@ import UIKit
 
 class SeriesPresenter {
     
-    private weak var view: ChannelsItemViewProtocol?
+    weak var view: ViewProtocol?
     private let items: [Codable]
     
-    init(view: ChannelsItemViewProtocol?,
-         items: [Codable]) {
-        self.view = view
+    init(items: [Codable]) {
         self.items = items
     }
 }
 
-extension SeriesPresenter: ChannelsItemPresenterProtocol {
+extension SeriesPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "SeriesView"
+    }
     
     func didLoadView() {
         fetchItems()

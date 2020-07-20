@@ -21,7 +21,7 @@ class CategoryMemoryDao {
     }
 }
 
-extension CategoryMemoryDao: CategoryMemoryDaoProtocol {
+extension CategoryMemoryDao: MemoryDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                         failureHandler: @escaping () -> ()) {
@@ -30,7 +30,7 @@ extension CategoryMemoryDao: CategoryMemoryDaoProtocol {
                               failureHandler: failureHandler)
     }
     
-    func saveCategories(data: Data) {
+    func saveItems(data: Data) {
         memoryHandler.save(with: RequestInfo(urlPath: Constants.urlPath), data: data)
     }
 }

@@ -11,18 +11,18 @@ import Network
 
 class NewEpisodesRepo {
     
-    private let networkDao: ChannelsItemNetworkDaoProtocol
-    private let memoryDao: ChannelsItemMemoryDaoProtocol
+    private let networkDao: NetworkDaoProtocol
+    private let memoryDao: MemoryDaoProtocol
     private let networkMonitor = NWPathMonitor()
     
-    init(networkDao: ChannelsItemNetworkDaoProtocol = NewEpisodesNetworkDao(),
-         memoryDao: ChannelsItemMemoryDaoProtocol = NewEpisodesMemoryDao()) {
+    init(networkDao: NetworkDaoProtocol = NewEpisodesNetworkDao(),
+         memoryDao: MemoryDaoProtocol = NewEpisodesMemoryDao()) {
         self.networkDao = networkDao
         self.memoryDao = memoryDao
     }
 }
 
-extension NewEpisodesRepo: ChannelsItemRepoProtocol {
+extension NewEpisodesRepo: RepoProtocol {
     
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                          failureHandler: @escaping () -> ()) {

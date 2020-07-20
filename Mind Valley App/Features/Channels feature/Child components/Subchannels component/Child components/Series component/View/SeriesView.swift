@@ -53,7 +53,7 @@ class SeriesView: UITableViewCell {
         }
     }
     
-    var presenter: ChannelsItemPresenterProtocol?
+    var presenter: PresenterProtocol?
     private var items: [Codable] = []
     @IBOutlet private weak var iconView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -61,7 +61,7 @@ class SeriesView: UITableViewCell {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var bottomSeparator: UIView!
     
-    func setup(presenter: ChannelsItemPresenterProtocol) {
+    func setup(presenter: PresenterProtocol) {
         setupBackground()
         setupTitleLabel()
         setupSubtitleLabel()
@@ -103,6 +103,9 @@ class SeriesView: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
+        collectionView.register(UINib.init(nibName: String(describing: SeriesCell.self),
+                                           bundle: nil),
+                                forCellWithReuseIdentifier: String(describing: SeriesCell.self))
     }
     
     private func setupBottomSeparator() {
@@ -112,7 +115,7 @@ class SeriesView: UITableViewCell {
                                                   alpha: Constants.SeparatorProperties.Color.alpha)
     }
     
-    private func setupPresenter(presenter: ChannelsItemPresenterProtocol) {
+    private func setupPresenter(presenter: PresenterProtocol) {
         self.presenter = presenter
         presenter.didLoadView()
     }
@@ -142,7 +145,7 @@ extension SeriesView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension SeriesView: ChannelsItemViewProtocol {
+extension SeriesView: ViewProtocol {
     
     func setItems(_ items: [Any]) {
         guard let items = items as? [Codable] else { return }

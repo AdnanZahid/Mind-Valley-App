@@ -10,15 +10,19 @@ import UIKit
 
 class NewEpisodesPresenter {
     
-    weak var view: ChannelsItemViewProtocol?
-    private var repo: ChannelsItemRepoProtocol
+    weak var view: ViewProtocol?
+    private var repo: RepoProtocol
     
-    init(repo: ChannelsItemRepoProtocol = NewEpisodesRepo()) {
+    init(repo: RepoProtocol = NewEpisodesRepo()) {
         self.repo = repo
     }
 }
 
-extension NewEpisodesPresenter: ChannelsItemPresenterProtocol {
+extension NewEpisodesPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "NewEpisodesView"
+    }
     
     func didLoadView() {
         fetchItems()

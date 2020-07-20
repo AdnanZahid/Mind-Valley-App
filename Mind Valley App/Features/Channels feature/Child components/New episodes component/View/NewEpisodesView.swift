@@ -45,7 +45,7 @@ class NewEpisodesView: UITableViewCell {
         }
     }
     
-    var presenter: ChannelsItemPresenterProtocol?
+    var presenter: PresenterProtocol?
     private var items: [Codable] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -87,7 +87,7 @@ class NewEpisodesView: UITableViewCell {
                                                   alpha: Constants.SeparatorProperties.Color.alpha)
     }
     
-    private func setupPresenter(_ presenter: ChannelsItemPresenterProtocol) {
+    private func setupPresenter(_ presenter: PresenterProtocol) {
         self.presenter = presenter
         presenter.didLoadView()
     }
@@ -117,9 +117,9 @@ extension NewEpisodesView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension NewEpisodesView: ChannelsItemViewProtocol {
+extension NewEpisodesView: ViewProtocol {
     
-    func setup(presenter: ChannelsItemPresenterProtocol) {
+    func setup(presenter: PresenterProtocol) {
         setupBackground()
         setupTitleLabel()
         setupCollectionView()

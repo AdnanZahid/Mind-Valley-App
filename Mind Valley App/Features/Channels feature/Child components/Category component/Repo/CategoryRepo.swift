@@ -11,21 +11,21 @@ import Network
 
 class CategoryRepo {
     
-    private let networkDao: CategoryNetworkDaoProtocol
-    private let memoryDao: CategoryMemoryDaoProtocol
+    private let networkDao: NetworkDaoProtocol
+    private let memoryDao: MemoryDaoProtocol
     private let networkMonitor = NWPathMonitor()
     
-    init(networkDao: CategoryNetworkDaoProtocol = CategoryNetworkDao(),
-         memoryDao: CategoryMemoryDaoProtocol = CategoryMemoryDao()) {
+    init(networkDao: NetworkDaoProtocol = CategoryNetworkDao(),
+         memoryDao: MemoryDaoProtocol = CategoryMemoryDao()) {
         self.networkDao = networkDao
         self.memoryDao = memoryDao
     }
 }
 
-extension CategoryRepo: CategoryRepoProtocol {
+extension CategoryRepo: RepoProtocol {
     
-    func fetchItems(successHandler: @escaping ([Category]) -> (),
-                        failureHandler: @escaping () -> ()) {
+    func fetchItems(successHandler: @escaping ([Codable]) -> (),
+                    failureHandler: @escaping () -> ()) {
         networkMonitor.pathUpdateHandler = { [weak self] path in
             // If network is available, make a network call
             if path.status == .satisfied {
@@ -33,7 +33,7 @@ extension CategoryRepo: CategoryRepoProtocol {
                     do {
                         let items = try JSONDecoder().decode(CategoriesList.self, from: data)
                         successHandler(items.data.categories)
-                        self?.memoryDao.saveCategories(data: data)
+                        self?.memoryDao.saveItems(data: data)
                     } catch _ {
                         failureHandler()
                     }

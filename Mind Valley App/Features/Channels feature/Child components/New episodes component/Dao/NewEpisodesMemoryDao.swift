@@ -21,7 +21,7 @@ class NewEpisodesMemoryDao {
     }
 }
 
-extension NewEpisodesMemoryDao: ChannelsItemMemoryDaoProtocol {
+extension NewEpisodesMemoryDao: MemoryDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                          failureHandler: @escaping () -> ()) {

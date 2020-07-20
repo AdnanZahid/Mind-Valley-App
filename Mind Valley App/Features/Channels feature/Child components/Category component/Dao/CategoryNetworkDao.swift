@@ -21,7 +21,7 @@ class CategoryNetworkDao {
     }
 }
 
-extension CategoryNetworkDao: CategoryNetworkDaoProtocol {
+extension CategoryNetworkDao: NetworkDaoProtocol {
     
     func fetchItems(successHandler: @escaping (Data) -> (),
                         failureHandler: @escaping () -> ()) {

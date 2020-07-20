@@ -37,17 +37,10 @@ class CategoryView: UITableViewCell {
         }
     }
     
-    var presenter: CategoryPresenterProtocol?
+    var presenter: PresenterProtocol?
     private var items: [Category] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
-    
-    func setup() {
-        setupBackground()
-        setupTitleLabel()
-        setupCategoriesCollectionView()
-        setupPresenter()
-    }
     
     private func setupBackground() {
         backgroundColor = .clear
@@ -75,8 +68,9 @@ class CategoryView: UITableViewCell {
         collectionView.delegate = self
     }
     
-    private func setupPresenter() {
-        presenter?.didLoadView()
+    private func setupPresenter(_ presenter: PresenterProtocol) {
+        self.presenter = presenter
+        presenter.didLoadView()
     }
 }
 
@@ -106,9 +100,17 @@ extension CategoryView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CategoryView: CategoryViewProtocol {
+extension CategoryView: ViewProtocol {
     
-    func setCategories(_ items: [Category]) {
+    func setup(presenter: PresenterProtocol) {
+        setupBackground()
+        setupTitleLabel()
+        setupCategoriesCollectionView()
+        setupPresenter(presenter)
+    }
+    
+    func setItems(_ items: [Any]) {
+        guard let items = items as? [Category] else { return }
         self.items = items
         collectionView.reloadData()
     }

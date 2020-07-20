@@ -14,15 +14,12 @@ enum PresentationMethod {
 }
 
 class ChannelsRouter {
-    private var view: ChannelsViewProtocol?
-}
-
-extension ChannelsRouter: ChannelsRouterProtocol {
+    private var view: ViewProtocol?
     
     func present(on viewController: UIViewController, presentationMethod: PresentationMethod) {
         guard let view = UIStoryboard(name: "ChannelsViewController",
                                       bundle: nil).instantiateInitialViewController() else { return }
-        self.view = view as? ChannelsViewProtocol
+        self.view = view as? ViewProtocol
         let presenter = ChannelsPresenter(view: self.view)
         self.view?.presenter = presenter
         switch presentationMethod {

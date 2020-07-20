@@ -57,6 +57,8 @@
 		E691417124C64358003A43EC /* ChannelsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691417024C64358003A43EC /* ChannelsInterface.swift */; };
 		E691417424C645F7003A43EC /* CoursesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691417324C645F7003A43EC /* CoursesPresenter.swift */; };
 		E691417924C64643003A43EC /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691417824C64643003A43EC /* SeriesPresenter.swift */; };
+		E691417B24C64E17003A43EC /* CoursesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417A24C64E17003A43EC /* CoursesCell.xib */; };
+		E691417D24C64E2E003A43EC /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417C24C64E2E003A43EC /* SeriesCell.xib */; };
 		E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */; };
 		E6DC564024C22C0B00A5D91D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563D24C22C0B00A5D91D /* Network.swift */; };
 		E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */; };
@@ -64,7 +66,6 @@
 		E6DC567524C22DBD00A5D91D /* CategoryEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566624C22DBD00A5D91D /* CategoryEntities.swift */; };
 		E6DC567624C22DBD00A5D91D /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566824C22DBD00A5D91D /* CategoryPresenter.swift */; };
 		E6DC567724C22DBD00A5D91D /* CategoryNetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC566A24C22DBD00A5D91D /* CategoryNetworkDao.swift */; };
-		E6DC567B24C22DBD00A5D91D /* CategoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */; };
 		E6DC567C24C22DBD00A5D91D /* CategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC567224C22DBD00A5D91D /* CategoryRepo.swift */; };
 		E6DC568224C22F9200A5D91D /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568124C22F9200A5D91D /* ChannelsRouter.swift */; };
 		E6DC568424C232FD00A5D91D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC568324C232FD00A5D91D /* CategoryCell.swift */; };
@@ -142,6 +143,8 @@
 		E691417024C64358003A43EC /* ChannelsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsInterface.swift; sourceTree = "<group>"; };
 		E691417324C645F7003A43EC /* CoursesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesPresenter.swift; sourceTree = "<group>"; };
 		E691417824C64643003A43EC /* SeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
+		E691417A24C64E17003A43EC /* CoursesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesCell.xib; sourceTree = "<group>"; };
+		E691417C24C64E2E003A43EC /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
 		E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		E6DC563D24C22C0B00A5D91D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
@@ -149,7 +152,6 @@
 		E6DC566624C22DBD00A5D91D /* CategoryEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEntities.swift; sourceTree = "<group>"; };
 		E6DC566824C22DBD00A5D91D /* CategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
 		E6DC566A24C22DBD00A5D91D /* CategoryNetworkDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryNetworkDao.swift; sourceTree = "<group>"; };
-		E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryInterface.swift; sourceTree = "<group>"; };
 		E6DC567224C22DBD00A5D91D /* CategoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRepo.swift; sourceTree = "<group>"; };
 		E6DC568124C22F9200A5D91D /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
 		E6DC568324C232FD00A5D91D /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				E60FF28124C343CC00BD7208 /* SeriesCell.swift */,
+				E691417C24C64E2E003A43EC /* SeriesCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				E60FF29F24C3441B00BD7208 /* CoursesCell.swift */,
+				E691417A24C64E17003A43EC /* CoursesCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -508,7 +512,6 @@
 		E6DC566424C22DBD00A5D91D /* Category component */ = {
 			isa = PBXGroup;
 			children = (
-				E6DC567024C22DBD00A5D91D /* CategoryInterface.swift */,
 				E6DC566924C22DBD00A5D91D /* Dao */,
 				E6DC566524C22DBD00A5D91D /* Entity */,
 				E6DC566724C22DBD00A5D91D /* Presenter */,
@@ -737,6 +740,7 @@
 				E60FF25424C333F800BD7208 /* Roboto-Italic.ttf in Resources */,
 				E6020F3924C300CB000D0A5C /* ChannelsViewController.storyboard in Resources */,
 				E641D76524C1CDBE00FEB37E /* LaunchScreen.storyboard in Resources */,
+				E691417B24C64E17003A43EC /* CoursesCell.xib in Resources */,
 				E641D76224C1CDBE00FEB37E /* Assets.xcassets in Resources */,
 				E641D76024C1CDBB00FEB37E /* Main.storyboard in Resources */,
 				E691416F24C63FAE003A43EC /* NewEpisodesCell.xib in Resources */,
@@ -746,6 +750,7 @@
 				E60FF25824C333F800BD7208 /* Roboto-Thin.ttf in Resources */,
 				E691416A24C6244A003A43EC /* SeriesView.xib in Resources */,
 				E60FF25724C333F800BD7208 /* Roboto-Bold.ttf in Resources */,
+				E691417D24C64E2E003A43EC /* SeriesCell.xib in Resources */,
 				E60FF25024C333F800BD7208 /* Roboto-MediumItalic.ttf in Resources */,
 				E60FF24E24C333F800BD7208 /* Roboto-Light.ttf in Resources */,
 			);
@@ -849,7 +854,6 @@
 				E6DC569724C2333A00A5D91D /* NewEpisodesPresenter.swift in Sources */,
 				E60FF29124C343CC00BD7208 /* SeriesCell.swift in Sources */,
 				E6020F4424C3141F000D0A5C /* SubchannelsMemoryDao.swift in Sources */,
-				E6DC567B24C22DBD00A5D91D /* CategoryInterface.swift in Sources */,
 				E691417424C645F7003A43EC /* CoursesPresenter.swift in Sources */,
 				E60FF2A724C3441B00BD7208 /* CoursesView.swift in Sources */,
 				E6020F4024C3124B000D0A5C /* MemoryHandlerInterface.swift in Sources */,

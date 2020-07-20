@@ -34,8 +34,8 @@ class ChannelsViewController: UIViewController {
         }
     }
     
-    var presenter: ChannelsPresenterProtocol?
-    private var items: [String] = []
+    var presenter: PresenterProtocol?
+    private var items: [PresenterProtocol] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -95,18 +95,28 @@ extension ChannelsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = items[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else { return UITableViewCell() }
-        let view = cell as? ChannelsItemViewProtocol
-        view?.setup(presenter: NewEpisodesPresenter(view: view))
+        let presenter = items[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: presenter.viewIdentifier),
+            let view = cell as? ViewProtocol else { return UITableViewCell() }
+        presenter.view = view
+        view.setup(presenter: presenter)
         return cell
     }
 }
 
-extension ChannelsViewController: ChannelsViewProtocol {
+extension ChannelsViewController: ViewProtocol {
     
-    func setItems(_ items: [String]) {
+    func setup(presenter: PresenterProtocol) {
+        // Intentionally kept empty
+    }
+    
+    func setItems(_ items: [Any]) {
+        guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
         tableView.reloadData()
+    }
+    
+    func showError() {
+        // Intentionally kept empty
     }
 }

@@ -10,14 +10,18 @@ import UIKit
 
 class ChannelsPresenter {
     
-    private weak var view: ChannelsViewProtocol?
+    weak var view: ViewProtocol?
     
-    init(view: ChannelsViewProtocol?) {
+    init(view: ViewProtocol?) {
         self.view = view
     }
 }
 
-extension ChannelsPresenter: ChannelsPresenterProtocol {
+extension ChannelsPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "" // Intentionally kept empty
+    }
     
     func didLoadView() {
         setItems()

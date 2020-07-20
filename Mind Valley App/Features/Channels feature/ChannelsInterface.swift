@@ -8,30 +8,30 @@
 
 import UIKit
 
-typealias IdentifierItemsPair = (identifier: String, items: [Codable])
-
-protocol ChannelsItemPresenterProtocol: class {
+protocol PresenterProtocol: class {
+    var viewIdentifier: String { get }
+    var view: ViewProtocol? { get set }
     func didLoadView()
 }
 
-protocol ChannelsItemViewProtocol: class {
-    var presenter: ChannelsItemPresenterProtocol? { get set }
-    func setup(presenter: ChannelsItemPresenterProtocol)
+protocol ViewProtocol: class {
+    var presenter: PresenterProtocol? { get set }
+    func setup(presenter: PresenterProtocol)
     func setItems(_ items: [Any])
     func showError()
 }
 
-protocol ChannelsItemRepoProtocol: class {
+protocol RepoProtocol: class {
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ())
 }
 
-protocol ChannelsItemNetworkDaoProtocol: class {
+protocol NetworkDaoProtocol: class {
     func fetchItems(successHandler: @escaping (Data) -> (),
                     failureHandler: @escaping () -> ())
 }
 
-protocol ChannelsItemMemoryDaoProtocol: class {
+protocol MemoryDaoProtocol: class {
     func fetchItems(successHandler: @escaping (Data) -> (),
                     failureHandler: @escaping () -> ())
     func saveItems(data: Data)

@@ -11,18 +11,18 @@ import Network
 
 class SubchannelsRepo {
     
-    private let networkDao: ChannelsItemNetworkDaoProtocol
-    private let memoryDao: ChannelsItemMemoryDaoProtocol
+    private let networkDao: NetworkDaoProtocol
+    private let memoryDao: MemoryDaoProtocol
     private let networkMonitor = NWPathMonitor()
     
-    init(networkDao: ChannelsItemNetworkDaoProtocol = SubchannelsNetworkDao(),
-         memoryDao: ChannelsItemMemoryDaoProtocol = SubchannelsMemoryDao()) {
+    init(networkDao: NetworkDaoProtocol = SubchannelsNetworkDao(),
+         memoryDao: MemoryDaoProtocol = SubchannelsMemoryDao()) {
         self.networkDao = networkDao
         self.memoryDao = memoryDao
     }
 }
 
-extension SubchannelsRepo: ChannelsItemRepoProtocol {
+extension SubchannelsRepo: RepoProtocol {
     
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ()) {

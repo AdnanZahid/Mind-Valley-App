@@ -20,11 +20,11 @@ class SubchannelsView: UITableViewCell {
         }
     }
     
-    var presenter: ChannelsItemPresenterProtocol?
-    private var items: [IdentifierItemsPair] = []
+    var presenter: PresenterProtocol?
+    private var items: [PresenterProtocol] = []
     @IBOutlet private weak var tableView: UITableView!
     
-    func setup(presenter: ChannelsItemPresenterProtocol) {
+    func setup(presenter: PresenterProtocol) {
         setupBackground()
         setupTableView()
         setupPresenter(presenter: presenter)
@@ -40,9 +40,15 @@ class SubchannelsView: UITableViewCell {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.register(UINib.init(nibName: String(describing: CoursesView.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: CoursesView.self))
+        tableView.register(UINib.init(nibName: String(describing: SeriesView.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: SeriesView.self))
     }
     
-    private func setupPresenter(presenter: ChannelsItemPresenterProtocol) {
+    private func setupPresenter(presenter: PresenterProtocol) {
         self.presenter = presenter
         presenter.didLoadView()
     }
@@ -55,30 +61,31 @@ extension SubchannelsView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = items[indexPath.row].identifier
-        let subchannelItems = items[indexPath.row].items
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else { return UITableViewCell() }
-        (cell as? ChannelsItemViewProtocol)?.setItems(subchannelItems)
+        let presenter = items[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: presenter.viewIdentifier),
+            let view = cell as? ViewProtocol else { return UITableViewCell() }
+        presenter.view = view
+        view.setup(presenter: presenter)
         return cell
     }
 }
 
-extension SubchannelsView: ChannelsItemViewProtocol {
+extension SubchannelsView: ViewProtocol {
     
     func setItems(_ items: [Any]) {
-        guard let items = items as? [IdentifierItemsPair] else { return }
+        guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
         tableView.reloadData()
     }
     
     func showError() {
-//        guard let visibleViewController = navigationController?.visibleViewController,
-//            !(visibleViewController is UIAlertController) else { return }
-//        let error = UIAlertController(title: Constants.Error.title,
-//                                      message: Constants.Error.message,
-//                                      preferredStyle: .alert)
-//        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
-//                                      style: .default))
-//        present(error, animated: true)
+        //        guard let visibleViewController = navigationController?.visibleViewController,
+        //            !(visibleViewController is UIAlertController) else { return }
+        //        let error = UIAlertController(title: Constants.Error.title,
+        //                                      message: Constants.Error.message,
+        //                                      preferredStyle: .alert)
+        //        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
+        //                                      style: .default))
+        //        present(error, animated: true)
     }
 }

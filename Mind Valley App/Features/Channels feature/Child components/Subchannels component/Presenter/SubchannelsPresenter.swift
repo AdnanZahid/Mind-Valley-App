@@ -10,15 +10,19 @@ import UIKit
 
 class SubchannelsPresenter {
     
-    weak var view: ChannelsItemViewProtocol?
-    private var repo: ChannelsItemRepoProtocol
+    weak var view: ViewProtocol?
+    private var repo: RepoProtocol
     
-    init(repo: ChannelsItemRepoProtocol = SubchannelsRepo()) {
+    init(repo: RepoProtocol = SubchannelsRepo()) {
         self.repo = repo
     }
 }
 
-extension SubchannelsPresenter: ChannelsItemPresenterProtocol {
+extension SubchannelsPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "SubchannelsView"
+    }
     
     func didLoadView() {
         fetchItems()
@@ -36,18 +40,8 @@ extension SubchannelsPresenter: ChannelsItemPresenterProtocol {
         guard let subchannels = items as? [Subchannel] else { return }
         let courses = subchannels.filter { $0.series.isEmpty }.map { $0.latestMedia }
         let series = subchannels.filter { !$0.series.isEmpty }.map { $0.series }
-        let items = [courses.map { [weak self] in self?.getCoursesViewIdentifier($0) },
-                     series.map { [weak self] in self?.getSeriesViewIdentifier($0) }]
-            .flatMap { $0 }
-            .compactMap { $0 }
-        view?.setItems(items)
-    }
-    
-    private func getCoursesViewIdentifier(_ courses: [Course]) -> IdentifierItemsPair {
-        return ("CoursesView", courses)
-    }
-    
-    private func getSeriesViewIdentifier(_ series: [Series]) -> IdentifierItemsPair {
-        return ("SeriesView", series)
+        guard let items = [courses.map { CoursesPresenter(items: $0) },
+                           series.map { SeriesPresenter(items: $0) }] as? [[PresenterProtocol]] else { return }
+        view?.setItems(items.flatMap { $0 }.compactMap { $0 })
     }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoursesCell" id="bBc-3T-rfe" customClass="CoursesCell" customModule="Mind_Valley_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="152" height="304"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gRc-KP-CPy">
+                <rect key="frame" x="0.0" y="0.0" width="152" height="304"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AdG-fv-5gZ">
+                        <rect key="frame" x="0.0" y="0.0" width="152" height="228"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="228" id="QGx-FK-edE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Art Of Conciouse Parenting" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH7-h6-NFk">
+                        <rect key="frame" x="0.0" y="238" width="152" height="61"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZH7-h6-NFk" firstAttribute="centerX" secondItem="gRc-KP-CPy" secondAttribute="centerX" id="KMd-KV-IgY"/>
+                    <constraint firstItem="AdG-fv-5gZ" firstAttribute="centerX" secondItem="gRc-KP-CPy" secondAttribute="centerX" id="Qt3-bz-p0h"/>
+                    <constraint firstItem="AdG-fv-5gZ" firstAttribute="top" secondItem="gRc-KP-CPy" secondAttribute="top" id="aVV-b4-GFE"/>
+                    <constraint firstItem="ZH7-h6-NFk" firstAttribute="top" secondItem="AdG-fv-5gZ" secondAttribute="bottom" constant="10" id="ga6-jj-J7e"/>
+                    <constraint firstItem="ZH7-h6-NFk" firstAttribute="width" secondItem="gRc-KP-CPy" secondAttribute="width" id="iop-b5-M4B"/>
+                    <constraint firstItem="AdG-fv-5gZ" firstAttribute="width" secondItem="gRc-KP-CPy" secondAttribute="width" id="wKS-k5-wzX"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="152" height="304"/>
+            <connections>
+                <outlet property="imageView" destination="AdG-fv-5gZ" id="VyM-NG-hHl"/>
+                <outlet property="titleLabel" destination="ZH7-h6-NFk" id="JyO-KZ-You"/>
+            </connections>
+            <point key="canvasLocation" x="162" y="-148"/>
+        </collectionViewCell>
+    </objects>
+</document>

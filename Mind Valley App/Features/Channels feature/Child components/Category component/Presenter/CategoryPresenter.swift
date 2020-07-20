@@ -10,15 +10,19 @@ import UIKit
 
 class CategoryPresenter {
     
-    weak var view: CategoryViewProtocol?
-    private var repo: CategoryRepoProtocol
+    weak var view: ViewProtocol?
+    private var repo: RepoProtocol
     
-    init(repo: CategoryRepoProtocol = CategoryRepo()) {
+    init(repo: RepoProtocol = CategoryRepo()) {
         self.repo = repo
     }
 }
 
-extension CategoryPresenter: CategoryPresenterProtocol {
+extension CategoryPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "CategoryView"
+    }
     
     func didLoadView() {
         fetchItems()
@@ -26,7 +30,7 @@ extension CategoryPresenter: CategoryPresenterProtocol {
     
     func fetchItems() {
         repo.fetchItems(successHandler: { [weak self] items in
-            self?.view?.setCategories(items)
+            self?.view?.setItems(items)
             }, failureHandler: { [weak self] in
                 self?.view?.showError()
         })

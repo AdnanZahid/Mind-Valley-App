@@ -9,17 +9,19 @@ import UIKit
 
 class CoursesPresenter {
     
-    private weak var view: ChannelsItemViewProtocol?
+    weak var view: ViewProtocol?
     private let items: [Codable]
     
-    init(view: ChannelsItemViewProtocol?,
-         items: [Codable]) {
-        self.view = view
+    init(items: [Codable]) {
         self.items = items
     }
 }
 
-extension CoursesPresenter: ChannelsItemPresenterProtocol {
+extension CoursesPresenter: PresenterProtocol {
+    
+    var viewIdentifier: String {
+        return "CoursesView"
+    }
     
     func didLoadView() {
         fetchItems()

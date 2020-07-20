@@ -53,7 +53,7 @@ class CoursesView: UITableViewCell {
         }
     }
     
-    var presenter: ChannelsItemPresenterProtocol?
+    var presenter: PresenterProtocol?
     private var items: [Codable] = []
     @IBOutlet private weak var iconView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -61,7 +61,7 @@ class CoursesView: UITableViewCell {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var bottomSeparator: UIView!
     
-    func setup(presenter: ChannelsItemPresenterProtocol) {
+    func setup(presenter: PresenterProtocol) {
         setupBackground()
         setupTitleLabel()
         setupSubtitleLabel()
@@ -103,6 +103,9 @@ class CoursesView: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
+        collectionView.register(UINib.init(nibName: String(describing: CoursesCell.self),
+                                           bundle: nil),
+                                forCellWithReuseIdentifier: String(describing: CoursesCell.self))
     }
     
     private func setupBottomSeparator() {
@@ -112,7 +115,7 @@ class CoursesView: UITableViewCell {
                                                   alpha: Constants.SeparatorProperties.Color.alpha)
     }
     
-    private func setupPresenter(presenter: ChannelsItemPresenterProtocol) {
+    private func setupPresenter(presenter: PresenterProtocol) {
         self.presenter = presenter
         presenter.didLoadView()
     }
@@ -126,8 +129,8 @@ extension CoursesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier,
-                                                            for: indexPath) as? SeriesCell,
-            let item = items[indexPath.row] as? Series else { return UICollectionViewCell() }
+                                                            for: indexPath) as? CoursesCell,
+            let item = items[indexPath.row] as? Course else { return UICollectionViewCell() }
         cell.setup(title: item.title, imageUrl: item.coverAsset.url)
         return cell
     }
@@ -142,7 +145,7 @@ extension CoursesView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CoursesView: ChannelsItemViewProtocol {
+extension CoursesView: ViewProtocol {
     
     func setItems(_ items: [Any]) {
         guard let items = items as? [Codable] else { return }
@@ -151,13 +154,13 @@ extension CoursesView: ChannelsItemViewProtocol {
     }
     
     func showError() {
-//        guard let visibleViewController = navigationController?.visibleViewController,
-//            !(visibleViewController is UIAlertController) else { return }
-//        let error = UIAlertController(title: "Error",
-//                                      message: "Something unexpected happened",
-//                                      preferredStyle: .alert)
-//        error.addAction(UIAlertAction(title: "Dismiss",
-//                                      style: .default))
-//        present(error, animated: true)
+        //        guard let visibleViewController = navigationController?.visibleViewController,
+        //            !(visibleViewController is UIAlertController) else { return }
+        //        let error = UIAlertController(title: "Error",
+        //                                      message: "Something unexpected happened",
+        //                                      preferredStyle: .alert)
+        //        error.addAction(UIAlertAction(title: "Dismiss",
+        //                                      style: .default))
+        //        present(error, animated: true)
     }
 }
