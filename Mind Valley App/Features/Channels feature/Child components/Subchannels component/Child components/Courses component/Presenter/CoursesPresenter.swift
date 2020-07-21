@@ -5,15 +5,16 @@
 //  Created by Adnan Zahid on 17/07/2020.
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
+
 import UIKit
 
 class CoursesPresenter {
     
     weak var view: ViewProtocol?
-    private let items: [Codable]
+    private let subchannel: Subchannel
     
-    init(items: [Codable]) {
-        self.items = items
+    init(subchannel: Subchannel) {
+        self.subchannel = subchannel
     }
 }
 
@@ -28,6 +29,8 @@ extension CoursesPresenter: PresenterProtocol {
     }
     
     func fetchItems() {
-        view?.setItems(items)
+        (view as? CoursesView)?.setTitle(subchannel.title)
+        (view as? CoursesView)?.setIconUrl(subchannel.iconAsset?.thumbnailURL ?? "")
+        view?.setItems(subchannel.latestMedia)
     }
 }

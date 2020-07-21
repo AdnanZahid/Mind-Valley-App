@@ -21,6 +21,11 @@ protocol ViewProtocol: class {
     func showError()
 }
 
+extension ViewProtocol {
+    func setup(presenter: PresenterProtocol) {} // Sometimes it is not required, hence the optionality
+    func showError() {} // Sometimes it is not required, hence the optionality
+}
+
 protocol RepoProtocol: class {
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ())

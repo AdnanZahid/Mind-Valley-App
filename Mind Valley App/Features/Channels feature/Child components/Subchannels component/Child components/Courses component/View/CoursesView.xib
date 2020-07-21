@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoursesView" id="nOS-wE-IMn" customClass="CoursesView" customModule="Mind_Valley_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="424"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nOS-wE-IMn" id="BGy-QB-Ngu">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nOS-wE-IMn" id="BGy-QB-Ngu">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="424"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-i3-nA9">
@@ -56,6 +56,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ah9-io-0h3" firstAttribute="top" secondItem="A6N-i3-nA9" secondAttribute="top" constant="20" id="8Ye-jK-aTn"/>
+                            <constraint firstAttribute="height" constant="90" id="H8C-33-8TR"/>
                             <constraint firstAttribute="bottom" secondItem="ah9-io-0h3" secondAttribute="bottom" constant="20" id="RbE-1g-lQM"/>
                             <constraint firstItem="vRZ-nH-LIH" firstAttribute="leading" secondItem="ah9-io-0h3" secondAttribute="trailing" constant="20" id="W33-aY-8yB"/>
                             <constraint firstAttribute="trailing" secondItem="vRZ-nH-LIH" secondAttribute="trailing" constant="20" id="eiO-qG-dJv"/>
@@ -64,10 +65,10 @@
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QAg-Di-jPA">
-                        <rect key="frame" x="0.0" y="90" width="414" height="409"/>
+                        <rect key="frame" x="0.0" y="90" width="414" height="334"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="409" id="XhM-8Z-zVF"/>
+                            <constraint firstAttribute="height" constant="334" id="XhM-8Z-zVF"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hJl-ON-Iue">
                             <size key="itemSize" width="128" height="128"/>
@@ -78,7 +79,7 @@
                         <cells/>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93k-wi-DeR">
-                        <rect key="frame" x="0.0" y="499" width="414" height="1"/>
+                        <rect key="frame" x="0.0" y="424" width="414" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="GPN-zS-dHk"/>

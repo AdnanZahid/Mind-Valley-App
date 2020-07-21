@@ -59,6 +59,7 @@
 		E691417924C64643003A43EC /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691417824C64643003A43EC /* SeriesPresenter.swift */; };
 		E691417B24C64E17003A43EC /* CoursesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417A24C64E17003A43EC /* CoursesCell.xib */; };
 		E691417D24C64E2E003A43EC /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417C24C64E2E003A43EC /* SeriesCell.xib */; };
+		E691418824C7647D003A43EC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691418724C7647D003A43EC /* CategoryCell.xib */; };
 		E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */; };
 		E6DC564024C22C0B00A5D91D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563D24C22C0B00A5D91D /* Network.swift */; };
 		E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */; };
@@ -145,6 +146,7 @@
 		E691417824C64643003A43EC /* SeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
 		E691417A24C64E17003A43EC /* CoursesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesCell.xib; sourceTree = "<group>"; };
 		E691417C24C64E2E003A43EC /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
+		E691418724C7647D003A43EC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		E6DC563D24C22C0B00A5D91D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				E6DC568324C232FD00A5D91D /* CategoryCell.swift */,
+				E691418724C7647D003A43EC /* CategoryCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				E641D76024C1CDBB00FEB37E /* Main.storyboard in Resources */,
 				E691416F24C63FAE003A43EC /* NewEpisodesCell.xib in Resources */,
 				E60FF25524C333F800BD7208 /* LICENSE.txt in Resources */,
+				E691418824C7647D003A43EC /* CategoryCell.xib in Resources */,
 				E691416424C62166003A43EC /* NewEpisodesView.xib in Resources */,
 				E691416824C6233A003A43EC /* CoursesView.xib in Resources */,
 				E60FF25824C333F800BD7208 /* Roboto-Thin.ttf in Resources */,

@@ -27,7 +27,7 @@ class FontKit {
     enum Size: CGFloat {
         case heading = 30
         case subHeading = 20
-        case title = 15
+        case title = 17
         case subtitle = 13
     }
     

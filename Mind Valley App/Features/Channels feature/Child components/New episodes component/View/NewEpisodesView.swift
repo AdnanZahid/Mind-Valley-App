@@ -15,6 +15,7 @@ class NewEpisodesView: UITableViewCell {
         static let cellIdentifier = "NewEpisodesCell"
         static let cellWidth: CGFloat = 152
         static let cellHeight: CGFloat = 354
+        static let cellSpacing: CGFloat = 20
         enum TitleProperties {
             static let text = "New Episodes"
             enum Font {
@@ -71,6 +72,12 @@ class NewEpisodesView: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: Constants.cellSpacing,
+                                           left: Constants.cellSpacing,
+                                           bottom: Constants.cellSpacing,
+                                           right: Constants.cellSpacing)
+        layout.minimumLineSpacing = Constants.cellSpacing
+        layout.minimumInteritemSpacing = Constants.cellSpacing
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -78,6 +85,7 @@ class NewEpisodesView: UITableViewCell {
         collectionView.register(UINib.init(nibName: String(describing: NewEpisodesCell.self),
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: NewEpisodesCell.self))
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     private func setupBottomSeparator() {

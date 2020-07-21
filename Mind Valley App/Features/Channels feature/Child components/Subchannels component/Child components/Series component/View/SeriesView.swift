@@ -15,6 +15,7 @@ class SeriesView: UITableViewCell {
         static let cellIdentifier = "SeriesCell"
         static let cellWidth: CGFloat = 152
         static let cellHeight: CGFloat = 354
+        static let iconCornerRadius: CGFloat = 25
         enum TitleProperties {
             enum Font {
                 static let style = FontKit.Style.normal
@@ -63,6 +64,7 @@ class SeriesView: UITableViewCell {
     
     func setup(presenter: PresenterProtocol) {
         setupBackground()
+        setupImageView()
         setupTitleLabel()
         setupSubtitleLabel()
         setupCollectionView()
@@ -72,6 +74,12 @@ class SeriesView: UITableViewCell {
     
     private func setupBackground() {
         backgroundColor = .clear
+    }
+    
+    private func setupImageView() {
+        imageView?.layer.cornerRadius = Constants.iconCornerRadius
+        imageView?.layer.masksToBounds = true
+        imageView?.clipsToBounds = true
     }
     
     private func setupTitleLabel() {
@@ -106,6 +114,7 @@ class SeriesView: UITableViewCell {
         collectionView.register(UINib.init(nibName: String(describing: SeriesCell.self),
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: SeriesCell.self))
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     private func setupBottomSeparator() {
@@ -147,20 +156,17 @@ extension SeriesView: UICollectionViewDelegateFlowLayout {
 
 extension SeriesView: ViewProtocol {
     
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func setIconUrl(_ iconUrl: String) {
+        iconView.sd_setImage(with: URL(string: iconUrl))
+    }
+    
     func setItems(_ items: [Any]) {
         guard let items = items as? [Codable] else { return }
         self.items = items
         collectionView.reloadData()
-    }
-    
-    func showError() {
-        //        guard let visibleViewController = navigationController?.visibleViewController,
-        //            !(visibleViewController is UIAlertController) else { return }
-        //        let error = UIAlertController(title: "Error",
-        //                                      message: "Something unexpected happened",
-        //                                      preferredStyle: .alert)
-        //        error.addAction(UIAlertAction(title: "Dismiss",
-        //                                      style: .default))
-        //        present(error, animated: true)
     }
 }

@@ -68,7 +68,7 @@ class ChannelsViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 500.0
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
@@ -81,6 +81,8 @@ class ChannelsViewController: UIViewController {
         tableView.register(UINib.init(nibName: String(describing: CategoryView.self),
                                       bundle: nil),
                            forCellReuseIdentifier: String(describing: CategoryView.self))
+        tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
     }
     
     private func setupPresenter() {

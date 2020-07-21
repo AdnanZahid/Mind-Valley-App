@@ -41,6 +41,7 @@ class CategoryView: UITableViewCell {
     private var items: [Category] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
     private func setupBackground() {
         backgroundColor = .clear
@@ -66,6 +67,10 @@ class CategoryView: UITableViewCell {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(UINib.init(nibName: String(describing: CategoryCell.self),
+                                           bundle: nil),
+                                forCellWithReuseIdentifier: String(describing: CategoryCell.self))
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     private func setupPresenter(_ presenter: PresenterProtocol) {
@@ -112,17 +117,10 @@ extension CategoryView: ViewProtocol {
     func setItems(_ items: [Any]) {
         guard let items = items as? [Category] else { return }
         self.items = items
+        heightConstraint.constant = CGFloat(items.count/2 + 1) * Constants.cellHeight
         collectionView.reloadData()
     }
     
     func showError() {
-        //        guard let visibleViewController = navigationController?.visibleViewController,
-        //            !(visibleViewController is UIAlertController) else { return }
-        //        let error = UIAlertController(title: Constants.Error.title,
-        //                                      message: Constants.Error.message,
-        //                                      preferredStyle: .alert)
-        //        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
-        //                                      style: .default))
-        //        present(error, animated: true)
     }
 }

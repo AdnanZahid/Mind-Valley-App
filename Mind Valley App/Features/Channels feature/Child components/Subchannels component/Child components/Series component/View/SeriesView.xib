@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SeriesView" id="Z1C-Dq-mIC" customClass="SeriesView" customModule="Mind_Valley_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1C-Dq-mIC" id="8J7-vc-pf4">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1C-Dq-mIC" id="8J7-vc-pf4">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfh-zm-JBV">
@@ -61,13 +61,14 @@
                             <constraint firstItem="9bI-lq-dsZ" firstAttribute="leading" secondItem="0nP-aZ-Hgh" secondAttribute="trailing" constant="20" id="XoD-fQ-tO2"/>
                             <constraint firstAttribute="bottom" secondItem="0nP-aZ-Hgh" secondAttribute="bottom" constant="20" id="dJg-o7-6do"/>
                             <constraint firstAttribute="trailing" secondItem="9bI-lq-dsZ" secondAttribute="trailing" constant="20" id="oPY-YF-qkt"/>
+                            <constraint firstAttribute="height" constant="90" id="tlA-5s-01G"/>
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jWa-YJ-7po">
-                        <rect key="frame" x="0.0" y="90" width="414" height="409"/>
+                        <rect key="frame" x="0.0" y="90" width="414" height="334"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="409" id="LUZ-Lp-uB7"/>
+                            <constraint firstAttribute="height" constant="334" id="LUZ-Lp-uB7"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yKX-Sa-aOp">
                             <size key="itemSize" width="128" height="128"/>
@@ -78,7 +79,7 @@
                         <cells/>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mX-7Z-TKf">
-                        <rect key="frame" x="0.0" y="499" width="414" height="1"/>
+                        <rect key="frame" x="0.0" y="424" width="414" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="XYA-79-9cj"/>

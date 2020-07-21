@@ -38,10 +38,10 @@ extension SubchannelsPresenter: PresenterProtocol {
     
     private func setItems(_ items: [Any]) {
         guard let subchannels = items as? [Subchannel] else { return }
-        let courses = subchannels.filter { $0.series.isEmpty }.map { $0.latestMedia }
-        let series = subchannels.filter { !$0.series.isEmpty }.map { $0.series }
-        guard let items = [courses.map { CoursesPresenter(items: $0) },
-                           series.map { SeriesPresenter(items: $0) }] as? [[PresenterProtocol]] else { return }
+        let coursesSubchannel = subchannels.filter { $0.series.isEmpty }
+        let seriesSubchannel = subchannels.filter { !$0.series.isEmpty }
+        guard let items = [coursesSubchannel.map { CoursesPresenter(subchannel: $0) },
+                           seriesSubchannel.map { SeriesPresenter(subchannel: $0) }] as? [[PresenterProtocol]] else { return }
         view?.setItems(items.flatMap { $0 }.compactMap { $0 })
     }
 }

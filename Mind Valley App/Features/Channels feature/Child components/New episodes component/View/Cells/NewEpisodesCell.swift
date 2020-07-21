@@ -12,7 +12,7 @@ import SDWebImage
 class NewEpisodesCell: UICollectionViewCell {
     
     private enum Constants {
-        static let cornerRadius: CGFloat = 25
+        static let cornerRadius: CGFloat = 8
         static let placeholderImageName = "placeholderImage"
         enum TitleProperties {
             enum Font {
@@ -44,7 +44,7 @@ class NewEpisodesCell: UICollectionViewCell {
         }
     }
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     
@@ -69,7 +69,7 @@ class NewEpisodesCell: UICollectionViewCell {
     }
     
     func setupSubtitle(_ subtitle: String) {
-        subtitleLabel.text = subtitle
+        subtitleLabel.text = subtitle.uppercased()
         subtitleLabel.textColor = UIColor(red: Constants.SubtitleProperties.Color.red,
                                           green: Constants.SubtitleProperties.Color.green,
                                           blue: Constants.SubtitleProperties.Color.blue,
@@ -83,5 +83,7 @@ class NewEpisodesCell: UICollectionViewCell {
     func setupImage(_ imageUrl: String) {
         imageView.sd_setImage(with: URL(string: imageUrl),
                               placeholderImage: UIImage(named: Constants.placeholderImageName))
+        imageView.layer.cornerRadius = Constants.cornerRadius
+        imageView.clipsToBounds = true
     }
 }

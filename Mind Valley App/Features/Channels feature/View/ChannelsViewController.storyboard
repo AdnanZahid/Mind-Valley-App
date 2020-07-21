@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4A-oA-PEC">
-                                <rect key="frame" x="20" y="64" width="374" height="21"/>
+                                <rect key="frame" x="20" y="90" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-Fx-Bxq">
-                                <rect key="frame" x="0.0" y="105" width="414" height="791"/>
+                                <rect key="frame" x="0.0" y="121" width="414" height="775"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -32,9 +32,9 @@
                             <constraint firstItem="D4A-oA-PEC" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="aLq-yD-T6p"/>
                             <constraint firstItem="6sA-Fx-Bxq" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" id="gyj-gH-ld4"/>
                             <constraint firstAttribute="bottom" secondItem="6sA-Fx-Bxq" secondAttribute="bottom" id="hst-4J-w5V"/>
-                            <constraint firstItem="D4A-oA-PEC" firstAttribute="top" secondItem="7hv-Dl-lEy" secondAttribute="top" constant="20" id="kBI-zs-TxX"/>
+                            <constraint firstItem="D4A-oA-PEC" firstAttribute="top" secondItem="7hv-Dl-lEy" secondAttribute="top" constant="46" id="kBI-zs-TxX"/>
                             <constraint firstItem="6sA-Fx-Bxq" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="nOk-qH-KMA"/>
-                            <constraint firstItem="6sA-Fx-Bxq" firstAttribute="top" secondItem="D4A-oA-PEC" secondAttribute="bottom" constant="20" id="zZj-ev-y8s"/>
+                            <constraint firstItem="6sA-Fx-Bxq" firstAttribute="top" secondItem="D4A-oA-PEC" secondAttribute="bottom" constant="10" id="zZj-ev-y8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7hv-Dl-lEy"/>
                     </view>

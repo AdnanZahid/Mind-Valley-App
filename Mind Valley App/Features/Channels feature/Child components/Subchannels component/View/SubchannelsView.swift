@@ -13,6 +13,7 @@ class SubchannelsView: UITableViewCell {
     private enum Constants {
         static let numberOfColumns = 2
         static let cellIdentifier = "SubchannelsCell"
+        static let cellHeight = 420
         enum Error {
             static let title = "Error"
             static let message = "Something unexpected happened"
@@ -23,12 +24,7 @@ class SubchannelsView: UITableViewCell {
     var presenter: PresenterProtocol?
     private var items: [PresenterProtocol] = []
     @IBOutlet private weak var tableView: UITableView!
-    
-    func setup(presenter: PresenterProtocol) {
-        setupBackground()
-        setupTableView()
-        setupPresenter(presenter: presenter)
-    }
+    @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
     private func setupBackground() {
         backgroundColor = .clear
@@ -36,7 +32,7 @@ class SubchannelsView: UITableViewCell {
     
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 500.0
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
@@ -46,6 +42,8 @@ class SubchannelsView: UITableViewCell {
         tableView.register(UINib.init(nibName: String(describing: SeriesView.self),
                                       bundle: nil),
                            forCellReuseIdentifier: String(describing: SeriesView.self))
+        tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
     }
     
     private func setupPresenter(presenter: PresenterProtocol) {
@@ -72,20 +70,16 @@ extension SubchannelsView: UITableViewDataSource {
 
 extension SubchannelsView: ViewProtocol {
     
+    func setup(presenter: PresenterProtocol) {
+        setupBackground()
+        setupTableView()
+        setupPresenter(presenter: presenter)
+    }
+    
     func setItems(_ items: [Any]) {
         guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
+        heightConstraint.constant = CGFloat(items.count * Constants.cellHeight)
         tableView.reloadData()
-    }
-    
-    func showError() {
-        //        guard let visibleViewController = navigationController?.visibleViewController,
-        //            !(visibleViewController is UIAlertController) else { return }
-        //        let error = UIAlertController(title: Constants.Error.title,
-        //                                      message: Constants.Error.message,
-        //                                      preferredStyle: .alert)
-        //        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
-        //                                      style: .default))
-        //        present(error, animated: true)
     }
 }
