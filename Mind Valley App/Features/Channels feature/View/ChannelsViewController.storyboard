@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xfW-g3-mOO">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -25,20 +25,86 @@
                                 <rect key="frame" x="0.0" y="121" width="414" height="775"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7U-Il-PL1">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Zzj-FR-DYI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Zzj-FR-DYI" firstAttribute="height" secondItem="D7U-Il-PL1" secondAttribute="height" id="Bfw-cw-4lY"/>
+                                    <constraint firstItem="Zzj-FR-DYI" firstAttribute="centerX" secondItem="D7U-Il-PL1" secondAttribute="centerX" id="EQU-ri-zaV"/>
+                                    <constraint firstItem="Zzj-FR-DYI" firstAttribute="width" secondItem="D7U-Il-PL1" secondAttribute="width" id="QfR-Wl-biJ"/>
+                                    <constraint firstItem="Zzj-FR-DYI" firstAttribute="centerY" secondItem="D7U-Il-PL1" secondAttribute="centerY" id="swp-np-O5w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-5z-KzO">
+                                <rect key="frame" x="0.0" y="896" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not connected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUR-le-zpe">
+                                        <rect key="frame" x="0.0" y="4.9999999999999991" width="414" height="14.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.78287301936619713" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hUR-le-zpe" firstAttribute="centerX" secondItem="3zj-5z-KzO" secondAttribute="centerX" id="Dii-L4-0Om"/>
+                                    <constraint firstAttribute="height" constant="40" id="Kwc-kq-AwC"/>
+                                    <constraint firstItem="hUR-le-zpe" firstAttribute="top" secondItem="3zj-5z-KzO" secondAttribute="top" constant="5" id="aap-TX-b5Y"/>
+                                    <constraint firstItem="hUR-le-zpe" firstAttribute="width" secondItem="3zj-5z-KzO" secondAttribute="width" id="uUA-BS-n0n"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSb-Pf-o7f">
+                                <rect key="frame" x="0.0" y="896" width="414" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWi-IA-lQk">
+                                        <rect key="frame" x="0.0" y="4.9999999999999991" width="414" height="14.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LWi-IA-lQk" firstAttribute="width" secondItem="qSb-Pf-o7f" secondAttribute="width" id="2mE-RJ-UPT"/>
+                                    <constraint firstAttribute="height" constant="40" id="4Md-wb-xXV"/>
+                                    <constraint firstItem="LWi-IA-lQk" firstAttribute="centerX" secondItem="qSb-Pf-o7f" secondAttribute="centerX" id="Ldc-5w-l0D"/>
+                                    <constraint firstItem="LWi-IA-lQk" firstAttribute="top" secondItem="qSb-Pf-o7f" secondAttribute="top" constant="5" id="dL4-kn-uvt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="D4A-oA-PEC" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" constant="-40" id="5bW-XI-rCh"/>
+                            <constraint firstItem="3zj-5z-KzO" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="61j-cI-oSU"/>
+                            <constraint firstItem="qSb-Pf-o7f" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="8WT-sj-88r"/>
+                            <constraint firstItem="D7U-Il-PL1" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" id="B8k-lh-NYr"/>
+                            <constraint firstAttribute="bottom" secondItem="qSb-Pf-o7f" secondAttribute="bottom" constant="-40" id="EtF-S0-Nfe"/>
+                            <constraint firstItem="3zj-5z-KzO" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" id="QY7-Vg-3Qq"/>
+                            <constraint firstItem="D7U-Il-PL1" firstAttribute="centerY" secondItem="7hv-Dl-lEy" secondAttribute="centerY" id="S5I-aj-pvY"/>
                             <constraint firstItem="D4A-oA-PEC" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="aLq-yD-T6p"/>
+                            <constraint firstAttribute="bottom" secondItem="3zj-5z-KzO" secondAttribute="bottom" constant="-40" id="fd1-mc-qlx"/>
                             <constraint firstItem="6sA-Fx-Bxq" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" id="gyj-gH-ld4"/>
                             <constraint firstAttribute="bottom" secondItem="6sA-Fx-Bxq" secondAttribute="bottom" id="hst-4J-w5V"/>
                             <constraint firstItem="D4A-oA-PEC" firstAttribute="top" secondItem="7hv-Dl-lEy" secondAttribute="top" constant="46" id="kBI-zs-TxX"/>
                             <constraint firstItem="6sA-Fx-Bxq" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="nOk-qH-KMA"/>
+                            <constraint firstItem="D7U-Il-PL1" firstAttribute="height" secondItem="aZJ-02-7tc" secondAttribute="height" id="x8l-dk-Wjv"/>
+                            <constraint firstItem="D7U-Il-PL1" firstAttribute="centerX" secondItem="7hv-Dl-lEy" secondAttribute="centerX" id="xCj-0u-iAp"/>
+                            <constraint firstItem="qSb-Pf-o7f" firstAttribute="width" secondItem="aZJ-02-7tc" secondAttribute="width" id="yue-5W-f4T"/>
                             <constraint firstItem="6sA-Fx-Bxq" firstAttribute="top" secondItem="D4A-oA-PEC" secondAttribute="bottom" constant="10" id="zZj-ev-y8s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7hv-Dl-lEy"/>
                     </view>
                     <connections>
+                        <outlet property="internetAvailableViewConstraint" destination="EtF-S0-Nfe" id="Zfg-Ls-5TE"/>
+                        <outlet property="internetUnavailableViewConstraint" destination="fd1-mc-qlx" id="0xx-wO-qe1"/>
+                        <outlet property="loadingView" destination="D7U-Il-PL1" id="bXu-QO-QnO"/>
                         <outlet property="tableView" destination="6sA-Fx-Bxq" id="yC3-Xj-RO8"/>
                         <outlet property="titleLabel" destination="D4A-oA-PEC" id="aGf-kI-XJS"/>
                     </connections>

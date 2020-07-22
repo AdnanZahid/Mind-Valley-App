@@ -10,16 +10,8 @@ import UIKit
 
 class SubchannelsView: UITableViewCell {
     
-    private enum Constants {
-        static let numberOfColumns = 2
-        enum Error {
-            static let title = "Error"
-            static let message = "Something unexpected happened"
-            static let buttonTitle = "Dismiss"
-        }
-    }
-    
     var presenter: PresenterProtocol?
+    var delegate: ViewDelegateProtocol?
     private var items: [PresenterProtocol] = []
     @IBOutlet private weak var tableView: SelfResizingTableView!
     
@@ -78,5 +70,10 @@ extension SubchannelsView: ViewProtocol {
         guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
         tableView.reloadData()
+        delegate?.showData()
+    }
+    
+    func showError() {
+        delegate?.showError()
     }
 }

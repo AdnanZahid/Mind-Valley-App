@@ -30,14 +30,10 @@ class CategoryView: UITableViewCell {
                 static let alpha: CGFloat = 1.0
             }
         }
-        enum Error {
-            static let title = "Error"
-            static let message = "Something unexpected happened"
-            static let buttonTitle = "Dismiss"
-        }
     }
     
     var presenter: PresenterProtocol?
+    var delegate: ViewDelegateProtocol?
     private var items: [Category] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -121,8 +117,10 @@ extension CategoryView: ViewProtocol {
         self.items = items
         heightConstraint.constant = CGFloat(items.count/2 + 1) * Constants.cellHeight
         collectionView.reloadData()
+        delegate?.showData()
     }
     
     func showError() {
+        delegate?.showError()
     }
 }

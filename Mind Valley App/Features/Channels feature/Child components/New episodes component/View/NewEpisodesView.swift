@@ -11,7 +11,6 @@ import UIKit
 class NewEpisodesView: UITableViewCell {
     
     private enum Constants {
-        static let numberOfColumns = 2
         static let cellIdentifier = "NewEpisodesCell"
         static let cellWidth: CGFloat = 152
         static let cellHeight: CGFloat = 354
@@ -39,14 +38,10 @@ class NewEpisodesView: UITableViewCell {
                 static let alpha: CGFloat = 1.0
             }
         }
-        enum Error {
-            static let title = "Error"
-            static let message = "Something unexpected happened"
-            static let buttonTitle = "Dismiss"
-        }
     }
     
     var presenter: PresenterProtocol?
+    var delegate: ViewDelegateProtocol?
     private var items: [Codable] = []
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -129,16 +124,10 @@ extension NewEpisodesView: ViewProtocol {
         guard let items = items as? [Codable] else { return }
         self.items = items
         collectionView.reloadData()
+        delegate?.showData()
     }
     
     func showError() {
-        //        guard let visibleViewController = navigationController?.visibleViewController,
-        //            !(visibleViewController is UIAlertController) else { return }
-        //        let error = UIAlertController(title: Constants.Error.title,
-        //                                      message: Constants.Error.message,
-        //                                      preferredStyle: .alert)
-        //        error.addAction(UIAlertAction(title: Constants.Error.buttonTitle,
-        //                                      style: .default))
-        //        present(error, animated: true)
+        delegate?.showError()
     }
 }

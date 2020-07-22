@@ -21,7 +21,10 @@ extension Network: NetworkProtocol {
                  failureHandler: @escaping () -> ()) {
         guard let url = URL(string: "\(Constants.baseUrl)\(info.urlPath)") else { return }
         let request = URLRequest(url: url)
-        let session = URLSession.shared
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        let session = URLSession.init(configuration: config)
         DispatchQueue.global(qos: .background).async {
             let task = session.dataTask(with: request as URLRequest) { data, response, error in
                 DispatchQueue.main.async {
