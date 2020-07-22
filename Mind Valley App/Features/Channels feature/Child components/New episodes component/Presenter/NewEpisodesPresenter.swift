@@ -28,7 +28,7 @@ extension NewEpisodesPresenter: PresenterProtocol {
         fetchItems()
     }
     
-    func fetchItems() {
+    private func fetchItems() {
         repo.fetchItems(successHandler: { [weak self] items in
             self?.view?.setItems(items)
             }, failureHandler: { [weak self] in

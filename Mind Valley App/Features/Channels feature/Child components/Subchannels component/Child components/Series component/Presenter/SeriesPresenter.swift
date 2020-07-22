@@ -28,7 +28,7 @@ extension SeriesPresenter: PresenterProtocol {
         fetchItems()
     }
     
-    func fetchItems() {
+    private func fetchItems() {
         (view as? SeriesView)?.setTitle(subchannel.title)
         (view as? SeriesView)?.setIconUrl(subchannel.iconAsset?.thumbnailURL ?? "")
         view?.setItems(subchannel.series)

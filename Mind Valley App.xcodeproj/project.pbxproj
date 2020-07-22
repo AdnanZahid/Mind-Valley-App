@@ -60,6 +60,38 @@
 		E691417D24C64E2E003A43EC /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417C24C64E2E003A43EC /* SeriesCell.xib */; };
 		E691418824C7647D003A43EC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691418724C7647D003A43EC /* CategoryCell.xib */; };
 		E691418B24C889C5003A43EC /* SelfResizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691418A24C889C5003A43EC /* SelfResizingTableView.swift */; };
+		E691419D24C8EF27003A43EC /* CategoryNetworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691419C24C8EF27003A43EC /* CategoryNetworkDaoTests.swift */; };
+		E691419F24C8EF30003A43EC /* CategoryMemoryDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691419E24C8EF30003A43EC /* CategoryMemoryDaoTests.swift */; };
+		E69141A124C8EF40003A43EC /* CategoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141A024C8EF40003A43EC /* CategoryPresenterTests.swift */; };
+		E69141A324C8EF4D003A43EC /* CategoryRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141A224C8EF4D003A43EC /* CategoryRepoTests.swift */; };
+		E69141A524C8EF5F003A43EC /* NewEpisodesMemoryDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141A424C8EF5F003A43EC /* NewEpisodesMemoryDaoTests.swift */; };
+		E69141A724C8EF6A003A43EC /* NewEpisodesNetworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141A624C8EF6A003A43EC /* NewEpisodesNetworkDaoTests.swift */; };
+		E69141A924C8EF79003A43EC /* NewEpisodesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141A824C8EF79003A43EC /* NewEpisodesPresenterTests.swift */; };
+		E69141AB24C8EF84003A43EC /* NewEpisodesRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141AA24C8EF84003A43EC /* NewEpisodesRepoTests.swift */; };
+		E69141B124C8EFD6003A43EC /* CoursesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141B024C8EFD6003A43EC /* CoursesPresenterTests.swift */; };
+		E69141B424C8EFF1003A43EC /* SeriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141B324C8EFF1003A43EC /* SeriesPresenterTests.swift */; };
+		E69141B624C8F0A3003A43EC /* SubchannelsMemoryDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141B524C8F0A3003A43EC /* SubchannelsMemoryDaoTests.swift */; };
+		E69141B824C8F0AD003A43EC /* SubchannelsNetworkDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141B724C8F0AD003A43EC /* SubchannelsNetworkDaoTests.swift */; };
+		E69141BA24C8F0BE003A43EC /* SubchannelsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141B924C8F0BE003A43EC /* SubchannelsPresenterTests.swift */; };
+		E69141BC24C8F0D1003A43EC /* SubchannelsRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141BB24C8F0D1003A43EC /* SubchannelsRepoTests.swift */; };
+		E69141BE24C8F0EB003A43EC /* ChannelsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141BD24C8F0EB003A43EC /* ChannelsPresenterTests.swift */; };
+		E69141C124C8F181003A43EC /* MockCategoryNetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C024C8F181003A43EC /* MockCategoryNetworkDao.swift */; };
+		E69141C324C8F18D003A43EC /* MockCategoryMemoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C224C8F18D003A43EC /* MockCategoryMemoryDao.swift */; };
+		E69141C524C8F19B003A43EC /* MockCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C424C8F19B003A43EC /* MockCategoryRepo.swift */; };
+		E69141C724C8F1AE003A43EC /* MockCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C624C8F1AE003A43EC /* MockCategoryView.swift */; };
+		E69141CA24C8F1CA003A43EC /* MockNewEpisodesMemoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141C924C8F1CA003A43EC /* MockNewEpisodesMemoryDao.swift */; };
+		E69141CC24C8F1E4003A43EC /* MockNewEpisodesNetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141CB24C8F1E4003A43EC /* MockNewEpisodesNetworkDao.swift */; };
+		E69141D024C8F20C003A43EC /* MockNewEpisodesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141CF24C8F20C003A43EC /* MockNewEpisodesRepo.swift */; };
+		E69141D224C8F21E003A43EC /* MockNewEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141D124C8F21E003A43EC /* MockNewEpisodesView.swift */; };
+		E69141D524C8F247003A43EC /* MockCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141D424C8F247003A43EC /* MockCoursesView.swift */; };
+		E69141D824C8F25C003A43EC /* MockSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141D724C8F25C003A43EC /* MockSeriesView.swift */; };
+		E69141DB24C8F280003A43EC /* MockSubchannelsMemoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141DA24C8F280003A43EC /* MockSubchannelsMemoryDao.swift */; };
+		E69141DD24C8F28D003A43EC /* MockSubchannelsNetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141DC24C8F28D003A43EC /* MockSubchannelsNetworkDao.swift */; };
+		E69141DF24C8F29C003A43EC /* MockSubchannelsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141DE24C8F29C003A43EC /* MockSubchannelsRepo.swift */; };
+		E69141E124C8F2AD003A43EC /* MockSubchannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141E024C8F2AD003A43EC /* MockSubchannelsView.swift */; };
+		E69141E424C8F2D2003A43EC /* MockChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141E324C8F2D2003A43EC /* MockChannelsView.swift */; };
+		E69141E724C8F445003A43EC /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141E624C8F445003A43EC /* MockNetwork.swift */; };
+		E69141E924C8F455003A43EC /* MockMemoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69141E824C8F455003A43EC /* MockMemoryHandler.swift */; };
 		E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */; };
 		E6DC564024C22C0B00A5D91D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563D24C22C0B00A5D91D /* Network.swift */; };
 		E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */; };
@@ -147,6 +179,38 @@
 		E691417C24C64E2E003A43EC /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
 		E691418724C7647D003A43EC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		E691418A24C889C5003A43EC /* SelfResizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfResizingTableView.swift; sourceTree = "<group>"; };
+		E691419C24C8EF27003A43EC /* CategoryNetworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNetworkDaoTests.swift; sourceTree = "<group>"; };
+		E691419E24C8EF30003A43EC /* CategoryMemoryDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMemoryDaoTests.swift; sourceTree = "<group>"; };
+		E69141A024C8EF40003A43EC /* CategoryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPresenterTests.swift; sourceTree = "<group>"; };
+		E69141A224C8EF4D003A43EC /* CategoryRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepoTests.swift; sourceTree = "<group>"; };
+		E69141A424C8EF5F003A43EC /* NewEpisodesMemoryDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEpisodesMemoryDaoTests.swift; sourceTree = "<group>"; };
+		E69141A624C8EF6A003A43EC /* NewEpisodesNetworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEpisodesNetworkDaoTests.swift; sourceTree = "<group>"; };
+		E69141A824C8EF79003A43EC /* NewEpisodesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEpisodesPresenterTests.swift; sourceTree = "<group>"; };
+		E69141AA24C8EF84003A43EC /* NewEpisodesRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEpisodesRepoTests.swift; sourceTree = "<group>"; };
+		E69141B024C8EFD6003A43EC /* CoursesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesPresenterTests.swift; sourceTree = "<group>"; };
+		E69141B324C8EFF1003A43EC /* SeriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenterTests.swift; sourceTree = "<group>"; };
+		E69141B524C8F0A3003A43EC /* SubchannelsMemoryDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubchannelsMemoryDaoTests.swift; sourceTree = "<group>"; };
+		E69141B724C8F0AD003A43EC /* SubchannelsNetworkDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubchannelsNetworkDaoTests.swift; sourceTree = "<group>"; };
+		E69141B924C8F0BE003A43EC /* SubchannelsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubchannelsPresenterTests.swift; sourceTree = "<group>"; };
+		E69141BB24C8F0D1003A43EC /* SubchannelsRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubchannelsRepoTests.swift; sourceTree = "<group>"; };
+		E69141BD24C8F0EB003A43EC /* ChannelsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterTests.swift; sourceTree = "<group>"; };
+		E69141C024C8F181003A43EC /* MockCategoryNetworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryNetworkDao.swift; sourceTree = "<group>"; };
+		E69141C224C8F18D003A43EC /* MockCategoryMemoryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryMemoryDao.swift; sourceTree = "<group>"; };
+		E69141C424C8F19B003A43EC /* MockCategoryRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryRepo.swift; sourceTree = "<group>"; };
+		E69141C624C8F1AE003A43EC /* MockCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryView.swift; sourceTree = "<group>"; };
+		E69141C924C8F1CA003A43EC /* MockNewEpisodesMemoryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewEpisodesMemoryDao.swift; sourceTree = "<group>"; };
+		E69141CB24C8F1E4003A43EC /* MockNewEpisodesNetworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewEpisodesNetworkDao.swift; sourceTree = "<group>"; };
+		E69141CF24C8F20C003A43EC /* MockNewEpisodesRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewEpisodesRepo.swift; sourceTree = "<group>"; };
+		E69141D124C8F21E003A43EC /* MockNewEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewEpisodesView.swift; sourceTree = "<group>"; };
+		E69141D424C8F247003A43EC /* MockCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoursesView.swift; sourceTree = "<group>"; };
+		E69141D724C8F25C003A43EC /* MockSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSeriesView.swift; sourceTree = "<group>"; };
+		E69141DA24C8F280003A43EC /* MockSubchannelsMemoryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSubchannelsMemoryDao.swift; sourceTree = "<group>"; };
+		E69141DC24C8F28D003A43EC /* MockSubchannelsNetworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSubchannelsNetworkDao.swift; sourceTree = "<group>"; };
+		E69141DE24C8F29C003A43EC /* MockSubchannelsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSubchannelsRepo.swift; sourceTree = "<group>"; };
+		E69141E024C8F2AD003A43EC /* MockSubchannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSubchannelsView.swift; sourceTree = "<group>"; };
+		E69141E324C8F2D2003A43EC /* MockChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsView.swift; sourceTree = "<group>"; };
+		E69141E624C8F445003A43EC /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
+		E69141E824C8F455003A43EC /* MockMemoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMemoryHandler.swift; sourceTree = "<group>"; };
 		E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		E6DC563D24C22C0B00A5D91D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
@@ -413,6 +477,8 @@
 		E641D76E24C1CDBE00FEB37E /* Mind Valley AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				E69141E524C8F437003A43EC /* Mock classes */,
+				E691418C24C8EE73003A43EC /* Feature tests */,
 				E641D76F24C1CDBE00FEB37E /* Mind_Valley_AppTests.swift */,
 				E641D77124C1CDBE00FEB37E /* Info.plist */,
 			);
@@ -449,6 +515,260 @@
 				E691418A24C889C5003A43EC /* SelfResizingTableView.swift */,
 			);
 			path = SelfResizingTableView;
+			sourceTree = "<group>";
+		};
+		E691418C24C8EE73003A43EC /* Feature tests */ = {
+			isa = PBXGroup;
+			children = (
+				E691418D24C8EE7D003A43EC /* Channels feature tests */,
+			);
+			path = "Feature tests";
+			sourceTree = "<group>";
+		};
+		E691418D24C8EE7D003A43EC /* Channels feature tests */ = {
+			isa = PBXGroup;
+			children = (
+				E691418F24C8EEAB003A43EC /* Child component tests */,
+				E69141E224C8F2C7003A43EC /* Mock classes */,
+				E691418E24C8EE8A003A43EC /* Presenter tests */,
+			);
+			path = "Channels feature tests";
+			sourceTree = "<group>";
+		};
+		E691418E24C8EE8A003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141BD24C8F0EB003A43EC /* ChannelsPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E691418F24C8EEAB003A43EC /* Child component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E691419024C8EEB5003A43EC /* Category component tests */,
+				E691419124C8EEBB003A43EC /* New episodes component tests */,
+				E691419224C8EEC5003A43EC /* Subchannels component tests */,
+			);
+			path = "Child component tests";
+			sourceTree = "<group>";
+		};
+		E691419024C8EEB5003A43EC /* Category component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141BF24C8F169003A43EC /* Mock classes */,
+				E691419324C8EEDC003A43EC /* Dao tests */,
+				E691419424C8EEE6003A43EC /* Presenter tests */,
+				E691419524C8EEEE003A43EC /* Repo tests */,
+			);
+			path = "Category component tests";
+			sourceTree = "<group>";
+		};
+		E691419124C8EEBB003A43EC /* New episodes component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141C824C8F1C1003A43EC /* Mock classes */,
+				E691419724C8EF08003A43EC /* Dao tests */,
+				E691419824C8EF08003A43EC /* Presenter tests */,
+				E691419624C8EF08003A43EC /* Repo tests */,
+			);
+			path = "New episodes component tests";
+			sourceTree = "<group>";
+		};
+		E691419224C8EEC5003A43EC /* Subchannels component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141D924C8F270003A43EC /* Mock classes */,
+				E69141AC24C8EF91003A43EC /* Child component tests */,
+				E691419924C8EF16003A43EC /* Dao tests */,
+				E691419A24C8EF16003A43EC /* Presenter tests */,
+				E691419B24C8EF16003A43EC /* Repo tests */,
+			);
+			path = "Subchannels component tests";
+			sourceTree = "<group>";
+		};
+		E691419324C8EEDC003A43EC /* Dao tests */ = {
+			isa = PBXGroup;
+			children = (
+				E691419E24C8EF30003A43EC /* CategoryMemoryDaoTests.swift */,
+				E691419C24C8EF27003A43EC /* CategoryNetworkDaoTests.swift */,
+			);
+			path = "Dao tests";
+			sourceTree = "<group>";
+		};
+		E691419424C8EEE6003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141A024C8EF40003A43EC /* CategoryPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E691419524C8EEEE003A43EC /* Repo tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141A224C8EF4D003A43EC /* CategoryRepoTests.swift */,
+			);
+			path = "Repo tests";
+			sourceTree = "<group>";
+		};
+		E691419624C8EF08003A43EC /* Repo tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141AA24C8EF84003A43EC /* NewEpisodesRepoTests.swift */,
+			);
+			path = "Repo tests";
+			sourceTree = "<group>";
+		};
+		E691419724C8EF08003A43EC /* Dao tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141A424C8EF5F003A43EC /* NewEpisodesMemoryDaoTests.swift */,
+				E69141A624C8EF6A003A43EC /* NewEpisodesNetworkDaoTests.swift */,
+			);
+			path = "Dao tests";
+			sourceTree = "<group>";
+		};
+		E691419824C8EF08003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141A824C8EF79003A43EC /* NewEpisodesPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E691419924C8EF16003A43EC /* Dao tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141B524C8F0A3003A43EC /* SubchannelsMemoryDaoTests.swift */,
+				E69141B724C8F0AD003A43EC /* SubchannelsNetworkDaoTests.swift */,
+			);
+			path = "Dao tests";
+			sourceTree = "<group>";
+		};
+		E691419A24C8EF16003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141B924C8F0BE003A43EC /* SubchannelsPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E691419B24C8EF16003A43EC /* Repo tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141BB24C8F0D1003A43EC /* SubchannelsRepoTests.swift */,
+			);
+			path = "Repo tests";
+			sourceTree = "<group>";
+		};
+		E69141AC24C8EF91003A43EC /* Child component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141AD24C8EFA2003A43EC /* Courses component tests */,
+				E69141AE24C8EFAE003A43EC /* Series component tests */,
+			);
+			path = "Child component tests";
+			sourceTree = "<group>";
+		};
+		E69141AD24C8EFA2003A43EC /* Courses component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141D324C8F23C003A43EC /* Mock classes */,
+				E69141AF24C8EFC4003A43EC /* Presenter tests */,
+			);
+			path = "Courses component tests";
+			sourceTree = "<group>";
+		};
+		E69141AE24C8EFAE003A43EC /* Series component tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141D624C8F24C003A43EC /* Mock classes */,
+				E69141B224C8EFE6003A43EC /* Presenter tests */,
+			);
+			path = "Series component tests";
+			sourceTree = "<group>";
+		};
+		E69141AF24C8EFC4003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141B024C8EFD6003A43EC /* CoursesPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E69141B224C8EFE6003A43EC /* Presenter tests */ = {
+			isa = PBXGroup;
+			children = (
+				E69141B324C8EFF1003A43EC /* SeriesPresenterTests.swift */,
+			);
+			path = "Presenter tests";
+			sourceTree = "<group>";
+		};
+		E69141BF24C8F169003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141C224C8F18D003A43EC /* MockCategoryMemoryDao.swift */,
+				E69141C024C8F181003A43EC /* MockCategoryNetworkDao.swift */,
+				E69141C424C8F19B003A43EC /* MockCategoryRepo.swift */,
+				E69141C624C8F1AE003A43EC /* MockCategoryView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141C824C8F1C1003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141C924C8F1CA003A43EC /* MockNewEpisodesMemoryDao.swift */,
+				E69141CB24C8F1E4003A43EC /* MockNewEpisodesNetworkDao.swift */,
+				E69141CF24C8F20C003A43EC /* MockNewEpisodesRepo.swift */,
+				E69141D124C8F21E003A43EC /* MockNewEpisodesView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141D324C8F23C003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141D424C8F247003A43EC /* MockCoursesView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141D624C8F24C003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141D724C8F25C003A43EC /* MockSeriesView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141D924C8F270003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141DA24C8F280003A43EC /* MockSubchannelsMemoryDao.swift */,
+				E69141DC24C8F28D003A43EC /* MockSubchannelsNetworkDao.swift */,
+				E69141DE24C8F29C003A43EC /* MockSubchannelsRepo.swift */,
+				E69141E024C8F2AD003A43EC /* MockSubchannelsView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141E224C8F2C7003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141E324C8F2D2003A43EC /* MockChannelsView.swift */,
+			);
+			path = "Mock classes";
+			sourceTree = "<group>";
+		};
+		E69141E524C8F437003A43EC /* Mock classes */ = {
+			isa = PBXGroup;
+			children = (
+				E69141E824C8F455003A43EC /* MockMemoryHandler.swift */,
+				E69141E624C8F445003A43EC /* MockNetwork.swift */,
+			);
+			path = "Mock classes";
 			sourceTree = "<group>";
 		};
 		E6DC563924C22BCF00A5D91D /* Features */ = {
@@ -542,8 +862,8 @@
 		E6DC566924C22DBD00A5D91D /* Dao */ = {
 			isa = PBXGroup;
 			children = (
-				E6DC566A24C22DBD00A5D91D /* CategoryNetworkDao.swift */,
 				E6020F3A24C311C5000D0A5C /* CategoryMemoryDao.swift */,
+				E6DC566A24C22DBD00A5D91D /* CategoryNetworkDao.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -885,7 +1205,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69141E724C8F445003A43EC /* MockNetwork.swift in Sources */,
+				E69141D524C8F247003A43EC /* MockCoursesView.swift in Sources */,
+				E69141A124C8EF40003A43EC /* CategoryPresenterTests.swift in Sources */,
+				E69141BC24C8F0D1003A43EC /* SubchannelsRepoTests.swift in Sources */,
+				E69141C524C8F19B003A43EC /* MockCategoryRepo.swift in Sources */,
+				E69141B424C8EFF1003A43EC /* SeriesPresenterTests.swift in Sources */,
+				E69141B124C8EFD6003A43EC /* CoursesPresenterTests.swift in Sources */,
+				E69141A324C8EF4D003A43EC /* CategoryRepoTests.swift in Sources */,
+				E69141D824C8F25C003A43EC /* MockSeriesView.swift in Sources */,
+				E69141A524C8EF5F003A43EC /* NewEpisodesMemoryDaoTests.swift in Sources */,
+				E69141B824C8F0AD003A43EC /* SubchannelsNetworkDaoTests.swift in Sources */,
+				E69141A924C8EF79003A43EC /* NewEpisodesPresenterTests.swift in Sources */,
+				E69141DB24C8F280003A43EC /* MockSubchannelsMemoryDao.swift in Sources */,
+				E691419F24C8EF30003A43EC /* CategoryMemoryDaoTests.swift in Sources */,
 				E641D77024C1CDBE00FEB37E /* Mind_Valley_AppTests.swift in Sources */,
+				E69141E924C8F455003A43EC /* MockMemoryHandler.swift in Sources */,
+				E69141C124C8F181003A43EC /* MockCategoryNetworkDao.swift in Sources */,
+				E69141DF24C8F29C003A43EC /* MockSubchannelsRepo.swift in Sources */,
+				E69141B624C8F0A3003A43EC /* SubchannelsMemoryDaoTests.swift in Sources */,
+				E69141AB24C8EF84003A43EC /* NewEpisodesRepoTests.swift in Sources */,
+				E69141A724C8EF6A003A43EC /* NewEpisodesNetworkDaoTests.swift in Sources */,
+				E691419D24C8EF27003A43EC /* CategoryNetworkDaoTests.swift in Sources */,
+				E69141C724C8F1AE003A43EC /* MockCategoryView.swift in Sources */,
+				E69141DD24C8F28D003A43EC /* MockSubchannelsNetworkDao.swift in Sources */,
+				E69141CA24C8F1CA003A43EC /* MockNewEpisodesMemoryDao.swift in Sources */,
+				E69141CC24C8F1E4003A43EC /* MockNewEpisodesNetworkDao.swift in Sources */,
+				E69141D024C8F20C003A43EC /* MockNewEpisodesRepo.swift in Sources */,
+				E69141BE24C8F0EB003A43EC /* ChannelsPresenterTests.swift in Sources */,
+				E69141BA24C8F0BE003A43EC /* SubchannelsPresenterTests.swift in Sources */,
+				E69141E424C8F2D2003A43EC /* MockChannelsView.swift in Sources */,
+				E69141C324C8F18D003A43EC /* MockCategoryMemoryDao.swift in Sources */,
+				E69141D224C8F21E003A43EC /* MockNewEpisodesView.swift in Sources */,
+				E69141E124C8F2AD003A43EC /* MockSubchannelsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

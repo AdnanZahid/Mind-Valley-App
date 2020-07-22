@@ -28,7 +28,7 @@ extension CoursesPresenter: PresenterProtocol {
         fetchItems()
     }
     
-    func fetchItems() {
+    private func fetchItems() {
         (view as? CoursesView)?.setTitle(subchannel.title)
         (view as? CoursesView)?.setIconUrl(subchannel.iconAsset?.thumbnailURL ?? "")
         view?.setItems(subchannel.latestMedia)

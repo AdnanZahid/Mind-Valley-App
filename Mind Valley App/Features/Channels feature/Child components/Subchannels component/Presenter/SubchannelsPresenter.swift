@@ -28,7 +28,7 @@ extension SubchannelsPresenter: PresenterProtocol {
         fetchItems()
     }
     
-    func fetchItems() {
+    private func fetchItems() {
         repo.fetchItems(successHandler: { [weak self] items in
             self?.setItems(items)
             }, failureHandler: { [weak self] in
