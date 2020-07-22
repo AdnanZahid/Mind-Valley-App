@@ -14,7 +14,7 @@ class CoursesView: UITableViewCell {
         static let numberOfColumns = 2
         static let cellIdentifier = "CoursesCell"
         static let cellWidth: CGFloat = 152
-        static let cellHeight: CGFloat = 320
+        static let cellHeight: CGFloat = 380
         static let cellSpacing: CGFloat = 20
         static let iconCornerRadius: CGFloat = 25
         enum TitleProperties {
@@ -160,7 +160,8 @@ extension CoursesView: ViewProtocol {
     }
     
     func setIconUrl(_ iconUrl: String) {
-        iconView.sd_setImage(with: URL(string: iconUrl))
+        iconView.sd_setImage(with: URL(string: iconUrl),
+                             placeholderImage: UIImage(named: "mindValleyIcon"))
     }
     
     func setItems(_ items: [Any]) {

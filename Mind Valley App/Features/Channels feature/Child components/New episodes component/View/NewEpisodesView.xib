@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewEpisodesView" id="7V1-B4-lom" customClass="NewEpisodesView" customModule="Mind_Valley_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7V1-B4-lom" id="aF8-Vn-zwJ">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Episodes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72j-YK-SzJ">
@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="r3W-Pc-a5k">
-                        <rect key="frame" x="0.0" y="70" width="414" height="354"/>
+                        <rect key="frame" x="0.0" y="75" width="414" height="354"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="354" id="wLj-XC-hAA"/>
@@ -39,7 +39,7 @@
                         <cells/>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vu0-a6-VsG">
-                        <rect key="frame" x="0.0" y="424" width="414" height="1"/>
+                        <rect key="frame" x="10" y="429" width="394" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="xEs-JK-gtC"/>
@@ -47,12 +47,12 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="r3W-Pc-a5k" firstAttribute="top" secondItem="72j-YK-SzJ" secondAttribute="bottom" constant="15" id="Duo-Gg-r9z"/>
+                    <constraint firstItem="r3W-Pc-a5k" firstAttribute="top" secondItem="72j-YK-SzJ" secondAttribute="bottom" constant="20" id="Duo-Gg-r9z"/>
                     <constraint firstItem="72j-YK-SzJ" firstAttribute="centerX" secondItem="aF8-Vn-zwJ" secondAttribute="centerX" id="G0k-EP-xft"/>
                     <constraint firstItem="72j-YK-SzJ" firstAttribute="top" secondItem="aF8-Vn-zwJ" secondAttribute="top" constant="30" id="IRw-hn-9XW"/>
                     <constraint firstItem="vu0-a6-VsG" firstAttribute="top" secondItem="r3W-Pc-a5k" secondAttribute="bottom" id="Lc6-QL-8uU"/>
                     <constraint firstItem="vu0-a6-VsG" firstAttribute="centerX" secondItem="aF8-Vn-zwJ" secondAttribute="centerX" id="Lg8-Qj-pEX"/>
-                    <constraint firstItem="vu0-a6-VsG" firstAttribute="width" secondItem="aF8-Vn-zwJ" secondAttribute="width" id="TLq-98-uPB"/>
+                    <constraint firstItem="vu0-a6-VsG" firstAttribute="width" secondItem="aF8-Vn-zwJ" secondAttribute="width" constant="-20" id="TLq-98-uPB"/>
                     <constraint firstItem="r3W-Pc-a5k" firstAttribute="centerX" secondItem="aF8-Vn-zwJ" secondAttribute="centerX" id="XXj-RY-NOp"/>
                     <constraint firstItem="r3W-Pc-a5k" firstAttribute="width" secondItem="aF8-Vn-zwJ" secondAttribute="width" id="hvm-CN-zgp"/>
                     <constraint firstItem="72j-YK-SzJ" firstAttribute="width" secondItem="aF8-Vn-zwJ" secondAttribute="width" constant="-40" id="jmG-si-9lh"/>

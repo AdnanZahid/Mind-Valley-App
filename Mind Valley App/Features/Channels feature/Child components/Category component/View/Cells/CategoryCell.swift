@@ -22,7 +22,7 @@ class CategoryCell: UICollectionViewCell {
             enum Font {
                 static let style = FontKit.Style.normal
                 static let family = FontKit.Family.roboto
-                static let weight = FontKit.Weight.regular
+                static let weight = FontKit.Weight.bold
                 static let size = FontKit.Size.title
             }
             enum Color {

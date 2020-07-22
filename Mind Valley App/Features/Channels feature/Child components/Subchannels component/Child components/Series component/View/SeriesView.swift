@@ -160,7 +160,8 @@ extension SeriesView: ViewProtocol {
     }
     
     func setIconUrl(_ iconUrl: String) {
-        iconView.sd_setImage(with: URL(string: iconUrl))
+        iconView.sd_setImage(with: URL(string: iconUrl),
+                             placeholderImage: UIImage(named: "mindValleyIcon"))
     }
     
     func setItems(_ items: [Any]) {
