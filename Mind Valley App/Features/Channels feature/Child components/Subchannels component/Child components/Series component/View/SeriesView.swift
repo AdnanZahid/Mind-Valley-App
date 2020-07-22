@@ -13,8 +13,9 @@ class SeriesView: UITableViewCell {
     private enum Constants {
         static let numberOfColumns = 2
         static let cellIdentifier = "SeriesCell"
-        static let cellWidth: CGFloat = 152
-        static let cellHeight: CGFloat = 354
+        static let cellWidth: CGFloat = 320
+        static let cellHeight: CGFloat = 240
+        static let cellSpacing: CGFloat = 20
         static let iconCornerRadius: CGFloat = 25
         enum TitleProperties {
             enum Font {
@@ -77,9 +78,9 @@ class SeriesView: UITableViewCell {
     }
     
     private func setupImageView() {
-        imageView?.layer.cornerRadius = Constants.iconCornerRadius
-        imageView?.layer.masksToBounds = true
-        imageView?.clipsToBounds = true
+        iconView?.layer.cornerRadius = Constants.iconCornerRadius
+        iconView?.layer.masksToBounds = true
+        iconView?.clipsToBounds = true
     }
     
     private func setupTitleLabel() {
@@ -107,14 +108,21 @@ class SeriesView: UITableViewCell {
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 0,
+                                           left: Constants.cellSpacing,
+                                           bottom: 0,
+                                           right: Constants.cellSpacing)
+        layout.minimumLineSpacing = Constants.cellSpacing
+        layout.minimumInteritemSpacing = Constants.cellSpacing
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.register(UINib.init(nibName: String(describing: SeriesCell.self),
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: SeriesCell.self))
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.setContentOffset(.zero, animated: false)
     }
     
     private func setupBottomSeparator() {
@@ -142,15 +150,6 @@ extension SeriesView: UICollectionViewDataSource {
             let item = items[indexPath.row] as? Series else { return UICollectionViewCell() }
         cell.setup(title: item.title, imageUrl: item.coverAsset.url)
         return cell
-    }
-}
-
-extension SeriesView: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
     }
 }
 

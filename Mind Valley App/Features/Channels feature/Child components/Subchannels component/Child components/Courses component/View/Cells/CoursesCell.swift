@@ -1,5 +1,5 @@
 //
-//  SubchannelsCell.swift
+//  CoursesCell.swift
 //  Mind Valley App
 //
 //  Created by Adnan Zahid on 17/07/2020.
@@ -12,7 +12,7 @@ import SDWebImage
 class CoursesCell: UICollectionViewCell {
     
     private enum Constants {
-        static let cornerRadius: CGFloat = 25
+        static let cornerRadius: CGFloat = 8
         static let placeholderImageName = "placeholderImage"
         enum TitleProperties {
             enum Font {
@@ -54,5 +54,7 @@ class CoursesCell: UICollectionViewCell {
     func setupImage(_ imageUrl: String) {
         imageView.sd_setImage(with: URL(string: imageUrl),
                               placeholderImage: UIImage(named: Constants.placeholderImageName))
+        imageView.layer.cornerRadius = Constants.cornerRadius
+        imageView.clipsToBounds = true
     }
 }

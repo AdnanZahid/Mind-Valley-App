@@ -14,7 +14,8 @@ class CoursesView: UITableViewCell {
         static let numberOfColumns = 2
         static let cellIdentifier = "CoursesCell"
         static let cellWidth: CGFloat = 152
-        static let cellHeight: CGFloat = 354
+        static let cellHeight: CGFloat = 320
+        static let cellSpacing: CGFloat = 20
         static let iconCornerRadius: CGFloat = 25
         enum TitleProperties {
             enum Font {
@@ -77,9 +78,9 @@ class CoursesView: UITableViewCell {
     }
     
     private func setupImageView() {
-        imageView?.layer.cornerRadius = Constants.iconCornerRadius
-        imageView?.layer.masksToBounds = true
-        imageView?.clipsToBounds = true
+        iconView?.layer.cornerRadius = Constants.iconCornerRadius
+        iconView?.layer.masksToBounds = true
+        iconView?.clipsToBounds = true
     }
     
     private func setupTitleLabel() {
@@ -107,14 +108,21 @@ class CoursesView: UITableViewCell {
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 0,
+                                           left: Constants.cellSpacing,
+                                           bottom: 0,
+                                           right: Constants.cellSpacing)
+        layout.minimumLineSpacing = Constants.cellSpacing
+        layout.minimumInteritemSpacing = Constants.cellSpacing
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.register(UINib.init(nibName: String(describing: CoursesCell.self),
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: CoursesCell.self))
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.setContentOffset(.zero, animated: false)
     }
     
     private func setupBottomSeparator() {
@@ -142,15 +150,6 @@ extension CoursesView: UICollectionViewDataSource {
             let item = items[indexPath.row] as? Course else { return UICollectionViewCell() }
         cell.setup(title: item.title, imageUrl: item.coverAsset.url)
         return cell
-    }
-}
-
-extension CoursesView: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
     }
 }
 

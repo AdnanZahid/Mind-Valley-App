@@ -21,7 +21,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-Fx-Bxq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-Fx-Bxq" customClass="SelfResizingTableView" customModule="Mind_Valley_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="121" width="414" height="775"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="7hv-Dl-lEy"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="6sA-Fx-Bxq" id="fKr-aB-E62"/>
+                        <outlet property="tableView" destination="6sA-Fx-Bxq" id="yC3-Xj-RO8"/>
                         <outlet property="titleLabel" destination="D4A-oA-PEC" id="aGf-kI-XJS"/>
                     </connections>
                 </viewController>

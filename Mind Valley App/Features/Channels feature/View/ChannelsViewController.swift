@@ -108,17 +108,9 @@ extension ChannelsViewController: UITableViewDataSource {
 
 extension ChannelsViewController: ViewProtocol {
     
-    func setup(presenter: PresenterProtocol) {
-        // Intentionally kept empty
-    }
-    
     func setItems(_ items: [Any]) {
         guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
         tableView.reloadData()
-    }
-    
-    func showError() {
-        // Intentionally kept empty
     }
 }

@@ -12,8 +12,6 @@ class SubchannelsView: UITableViewCell {
     
     private enum Constants {
         static let numberOfColumns = 2
-        static let cellIdentifier = "SubchannelsCell"
-        static let cellHeight = 420
         enum Error {
             static let title = "Error"
             static let message = "Something unexpected happened"
@@ -23,8 +21,7 @@ class SubchannelsView: UITableViewCell {
     
     var presenter: PresenterProtocol?
     private var items: [PresenterProtocol] = []
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var tableView: SelfResizingTableView!
     
     private func setupBackground() {
         backgroundColor = .clear
@@ -44,6 +41,7 @@ class SubchannelsView: UITableViewCell {
                            forCellReuseIdentifier: String(describing: SeriesView.self))
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
+        tableView.isScrollEnabled = false
     }
     
     private func setupPresenter(presenter: PresenterProtocol) {
@@ -79,7 +77,6 @@ extension SubchannelsView: ViewProtocol {
     func setItems(_ items: [Any]) {
         guard let items = items as? [PresenterProtocol] else { return }
         self.items = items
-        heightConstraint.constant = CGFloat(items.count * Constants.cellHeight)
         tableView.reloadData()
     }
 }

@@ -12,7 +12,7 @@ import SDWebImage
 class SeriesCell: UICollectionViewCell {
     
     private enum Constants {
-        static let cornerRadius: CGFloat = 25
+        static let cornerRadius: CGFloat = 8
         static let placeholderImageName = "placeholderImage"
         enum TitleProperties {
             enum Font {
@@ -54,5 +54,7 @@ class SeriesCell: UICollectionViewCell {
     func setupImage(_ imageUrl: String) {
         imageView.sd_setImage(with: URL(string: imageUrl),
                               placeholderImage: UIImage(named: Constants.placeholderImageName))
+        imageView.layer.cornerRadius = Constants.cornerRadius
+        imageView.clipsToBounds = true
     }
 }

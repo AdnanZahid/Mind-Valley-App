@@ -13,7 +13,6 @@
 		E6020F3124C23DF8000D0A5C /* SubchannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F2324C23DF8000D0A5C /* SubchannelsPresenter.swift */; };
 		E6020F3224C23DF8000D0A5C /* SubchannelsNetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F2524C23DF8000D0A5C /* SubchannelsNetworkDao.swift */; };
 		E6020F3324C23DF8000D0A5C /* SubchannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F2724C23DF8000D0A5C /* SubchannelsView.swift */; };
-		E6020F3424C23DF8000D0A5C /* SubchannelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F2924C23DF8000D0A5C /* SubchannelsCell.swift */; };
 		E6020F3624C23DF8000D0A5C /* SubchannelsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F2C24C23DF8000D0A5C /* SubchannelsRepo.swift */; };
 		E6020F3924C300CB000D0A5C /* ChannelsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6020F3824C300CB000D0A5C /* ChannelsViewController.storyboard */; };
 		E6020F3B24C311C5000D0A5C /* CategoryMemoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6020F3A24C311C5000D0A5C /* CategoryMemoryDao.swift */; };
@@ -60,6 +59,7 @@
 		E691417B24C64E17003A43EC /* CoursesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417A24C64E17003A43EC /* CoursesCell.xib */; };
 		E691417D24C64E2E003A43EC /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691417C24C64E2E003A43EC /* SeriesCell.xib */; };
 		E691418824C7647D003A43EC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E691418724C7647D003A43EC /* CategoryCell.xib */; };
+		E691418B24C889C5003A43EC /* SelfResizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E691418A24C889C5003A43EC /* SelfResizingTableView.swift */; };
 		E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */; };
 		E6DC564024C22C0B00A5D91D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563D24C22C0B00A5D91D /* Network.swift */; };
 		E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */; };
@@ -96,7 +96,6 @@
 		E6020F2324C23DF8000D0A5C /* SubchannelsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubchannelsPresenter.swift; sourceTree = "<group>"; };
 		E6020F2524C23DF8000D0A5C /* SubchannelsNetworkDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubchannelsNetworkDao.swift; sourceTree = "<group>"; };
 		E6020F2724C23DF8000D0A5C /* SubchannelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubchannelsView.swift; sourceTree = "<group>"; };
-		E6020F2924C23DF8000D0A5C /* SubchannelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubchannelsCell.swift; sourceTree = "<group>"; };
 		E6020F2C24C23DF8000D0A5C /* SubchannelsRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubchannelsRepo.swift; sourceTree = "<group>"; };
 		E6020F3824C300CB000D0A5C /* ChannelsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChannelsViewController.storyboard; sourceTree = "<group>"; };
 		E6020F3A24C311C5000D0A5C /* CategoryMemoryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMemoryDao.swift; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		E691417A24C64E17003A43EC /* CoursesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursesCell.xib; sourceTree = "<group>"; };
 		E691417C24C64E2E003A43EC /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
 		E691418724C7647D003A43EC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		E691418A24C889C5003A43EC /* SelfResizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfResizingTableView.swift; sourceTree = "<group>"; };
 		E6DC563C24C22C0B00A5D91D /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		E6DC563D24C22C0B00A5D91D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E6DC563E24C22C0B00A5D91D /* RequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
@@ -249,19 +249,10 @@
 		E6020F2624C23DF8000D0A5C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E6020F2824C23DF8000D0A5C /* Cells */,
 				E6020F2724C23DF8000D0A5C /* SubchannelsView.swift */,
 				E691416524C621DC003A43EC /* SubchannelsView.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E6020F2824C23DF8000D0A5C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E6020F2924C23DF8000D0A5C /* SubchannelsCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E6020F2B24C23DF8000D0A5C /* Repo */ = {
@@ -452,6 +443,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		E691418924C889AA003A43EC /* SelfResizingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E691418A24C889C5003A43EC /* SelfResizingTableView.swift */,
+			);
+			path = SelfResizingTableView;
+			sourceTree = "<group>";
+		};
 		E6DC563924C22BCF00A5D91D /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +462,7 @@
 		E6DC563A24C22C0B00A5D91D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E691418924C889AA003A43EC /* SelfResizingTableView */,
 				E60FF25A24C334D600BD7208 /* FontKit */,
 				E6020F3C24C31211000D0A5C /* MemoryHandler */,
 				E6DC563B24C22C0B00A5D91D /* Network */,
@@ -843,7 +843,6 @@
 				E6DC569624C2333A00A5D91D /* NewEpisodesEntities.swift in Sources */,
 				E6020F3324C23DF8000D0A5C /* SubchannelsView.swift in Sources */,
 				E6DC564124C22C0B00A5D91D /* RequestInfo.swift in Sources */,
-				E6020F3424C23DF8000D0A5C /* SubchannelsCell.swift in Sources */,
 				E6DC567524C22DBD00A5D91D /* CategoryEntities.swift in Sources */,
 				E6DC569A24C2333A00A5D91D /* NewEpisodesCell.swift in Sources */,
 				E6DC563F24C22C0B00A5D91D /* NetworkInterface.swift in Sources */,
@@ -869,6 +868,7 @@
 				E60FF2A524C3441B00BD7208 /* CoursesCell.swift in Sources */,
 				E691417924C64643003A43EC /* SeriesPresenter.swift in Sources */,
 				E6DC568224C22F9200A5D91D /* ChannelsRouter.swift in Sources */,
+				E691418B24C889C5003A43EC /* SelfResizingTableView.swift in Sources */,
 				E691416024C61F48003A43EC /* CategoryView.swift in Sources */,
 				E6020F3624C23DF8000D0A5C /* SubchannelsRepo.swift in Sources */,
 				E6020F3E24C31228000D0A5C /* MemoryHandler.swift in Sources */,

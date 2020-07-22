@@ -57,7 +57,6 @@ class NewEpisodesView: UITableViewCell {
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = Constants.TitleProperties.text
         titleLabel.textColor = UIColor(red: Constants.TitleProperties.Color.red,
                                        green: Constants.TitleProperties.Color.green,
                                        blue: Constants.TitleProperties.Color.blue,
@@ -72,20 +71,20 @@ class NewEpisodesView: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: Constants.cellSpacing,
+        layout.sectionInset = UIEdgeInsets(top: 0,
                                            left: Constants.cellSpacing,
-                                           bottom: Constants.cellSpacing,
+                                           bottom: 0,
                                            right: Constants.cellSpacing)
         layout.minimumLineSpacing = Constants.cellSpacing
         layout.minimumInteritemSpacing = Constants.cellSpacing
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.register(UINib.init(nibName: String(describing: NewEpisodesCell.self),
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: NewEpisodesCell.self))
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.setContentOffset(.zero, animated: false)
     }
     
     private func setupBottomSeparator() {
@@ -113,15 +112,6 @@ extension NewEpisodesView: UICollectionViewDataSource {
             let item = items[indexPath.row] as? NewEpisode else { return UICollectionViewCell() }
         cell.setup(title: item.title, subtitle: item.channel.title, imageUrl: item.coverAsset.url)
         return cell
-    }
-}
-
-extension NewEpisodesView: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Constants.cellWidth, height: Constants.cellHeight)
     }
 }
 

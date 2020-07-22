@@ -71,6 +71,8 @@ class CategoryView: UITableViewCell {
                                            bundle: nil),
                                 forCellWithReuseIdentifier: String(describing: CategoryCell.self))
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.setContentOffset(.zero, animated: false)
+        collectionView.contentInsetAdjustmentBehavior = .never
     }
     
     private func setupPresenter(_ presenter: PresenterProtocol) {
