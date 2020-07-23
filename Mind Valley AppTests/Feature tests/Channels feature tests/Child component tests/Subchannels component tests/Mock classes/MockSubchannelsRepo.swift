@@ -6,12 +6,30 @@
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
 
-import Foundation
+import XCTest
 @testable import Mind_Valley_App
 
-class MockSubchannelsRepo: RepoProtocol {
+class MockSubchannelsRepo {
+    
+    private var requestExpectation: XCTestExpectation
+    
+    init(requestExpectation: XCTestExpectation) {
+        self.requestExpectation = requestExpectation
+    }
+}
+
+extension MockSubchannelsRepo: RepoProtocol {
     
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ()) {
+        requestExpectation.fulfill()
+        successHandler([Subchannel(title: "Dummy subchannel from repo",
+                                   series: [],
+                                   mediaCount: 0,
+                                   latestMedia: [],
+                                   id: nil,
+                                   iconAsset: nil,
+                                   coverAsset: SubchannelCoverAsset(url: ""),
+                                   slug: nil)])
     }
 }

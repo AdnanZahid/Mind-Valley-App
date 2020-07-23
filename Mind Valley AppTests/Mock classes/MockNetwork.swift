@@ -6,11 +6,27 @@
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
 
-import Foundation
+import XCTest
 @testable import Mind_Valley_App
 
-class MockNetwork: NetworkProtocol {
+class MockNetwork {
+    
+    private let requestExpectation: XCTestExpectation
+    var shouldSucceed = true
+    
+    init(requestExpectation: XCTestExpectation) {
+        self.requestExpectation = requestExpectation
+    }
+}
+
+extension MockNetwork: NetworkProtocol {
     
     func request(with info: RequestInfo, successHandler: @escaping (Data) -> (), failureHandler: @escaping () -> ()) {
+        requestExpectation.fulfill()
+        if shouldSucceed {
+            successHandler(Data())
+        } else {
+            failureHandler()
+        }
     }
 }

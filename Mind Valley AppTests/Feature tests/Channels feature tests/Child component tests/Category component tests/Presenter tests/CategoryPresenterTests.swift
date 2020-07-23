@@ -11,15 +11,24 @@ import XCTest
 
 class CategoryPresenterTests: XCTestCase {
     
+    private enum Constants {
+        static let timeout = 1.0
+    }
+    
     private var view: ViewProtocol?
     private var repo: RepoProtocol?
     private var presenter: PresenterProtocol?
+    private var viewExpectation: XCTestExpectation?
+    private var repoExpectation: XCTestExpectation?
     
     override func setUp() {
         super.setUp()
-        view = MockCoursesView()
-        repo = MockCategoryRepo()
+        viewExpectation = XCTestExpectation(description: "Expectation for population of view")
+        repoExpectation = XCTestExpectation(description: "Expectation for requesting data from repo")
+        view = MockCoursesView(requestExpectation: viewExpectation!)
+        repo = MockCategoryRepo(requestExpectation: repoExpectation!)
         presenter = CategoryPresenter(repo: repo!)
+        presenter?.view = view
     }
     
     override func tearDown() {
@@ -31,5 +40,6 @@ class CategoryPresenterTests: XCTestCase {
     
     func testDidLoadView() {
         presenter?.didLoadView()
+        wait(for: [viewExpectation!, repoExpectation!], timeout: Constants.timeout)
     }
 }

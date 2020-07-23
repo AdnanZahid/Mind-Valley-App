@@ -11,23 +11,54 @@ import XCTest
 
 class SubchannelsNetworkDaoTests: XCTestCase {
     
-    private var network: NetworkProtocol?
+    private enum Constants {
+        static let timeout = 1.0
+    }
+    
+    private var network: MockNetwork?
     private var networkDao: NetworkDaoProtocol?
+    private var requestNetworkExpectation: XCTestExpectation?
+    private var requestSuccessExpectation: XCTestExpectation?
+    private var requestFailureExpectation: XCTestExpectation?
     
     override func setUp() {
         super.setUp()
-        network = MockNetwork()
+        requestNetworkExpectation = XCTestExpectation(description: "Expectation for requesting data from network inside the network class")
+        requestSuccessExpectation = XCTestExpectation(description: "Expectation for requesting data from network success")
+        requestFailureExpectation = XCTestExpectation(description: "Expectation for requesting data from network failure")
+        network = MockNetwork(requestExpectation: requestNetworkExpectation!)
         networkDao = SubchannelsNetworkDao(network: network!)
     }
     
     override func tearDown() {
         network = nil
         networkDao = nil
+        requestSuccessExpectation = nil
+        requestFailureExpectation = nil
         super.tearDown()
     }
     
-    func testFetchItems() {
-        networkDao?.fetchItems(successHandler: { _ in },
-                               failureHandler: {})
+    func testFetchItemsSuccess() {
+        requestSuccessExpectation?.isInverted = false
+        requestFailureExpectation?.isInverted = true
+        network?.shouldSucceed = true
+        networkDao?.fetchItems(successHandler: { [unowned self] _ in
+            self.requestSuccessExpectation!.fulfill()
+            }, failureHandler: { [unowned self] in
+                self.requestFailureExpectation!.fulfill()
+        })
+        wait(for: [requestNetworkExpectation!, requestSuccessExpectation!, requestFailureExpectation!], timeout: Constants.timeout)
+    }
+    
+    func testFetchItemsFailure() {
+        requestSuccessExpectation?.isInverted = true
+        requestFailureExpectation?.isInverted = false
+        network?.shouldSucceed = false
+        networkDao?.fetchItems(successHandler: { [unowned self] _ in
+            self.requestSuccessExpectation!.fulfill()
+            }, failureHandler: { [unowned self] in
+                self.requestFailureExpectation!.fulfill()
+        })
+        wait(for: [requestNetworkExpectation!, requestSuccessExpectation!, requestFailureExpectation!], timeout: Constants.timeout)
     }
 }

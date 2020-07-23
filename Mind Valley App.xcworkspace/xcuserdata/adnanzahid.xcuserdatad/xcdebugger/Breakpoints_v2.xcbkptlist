@@ -3,4 +3,213 @@
    uuid = "2E1E7052-0A0B-4916-9757-A78608F431B7"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C59B924-9586-495E-A994-AAFEC5C165A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley AppTests/Feature tests/Channels feature tests/Child component tests/Subchannels component tests/Repo tests/SubchannelsRepoTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "testFetchItemsFromNetworkSuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F786232-27BC-4202-A040-263D848FF9E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley AppTests/Feature tests/Channels feature tests/Child component tests/Subchannels component tests/Repo tests/SubchannelsRepoTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "testFetchItemsFromMemorySuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2481FF42-94EA-46EE-8B29-96409635EFB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley AppTests/Feature tests/Channels feature tests/Child component tests/New episodes component tests/Repo tests/NewEpisodesRepoTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "testFetchItemsFromNetworkSuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F76A3D0-73B9-4FB4-99FA-7A6DF0F16567"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley AppTests/Feature tests/Channels feature tests/Child component tests/New episodes component tests/Repo tests/NewEpisodesRepoTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "testSaveItemsIntoMemory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3E9D6F5-41D4-44DB-A6DA-99C78D19A36F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/Category component/Presenter/CategoryPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DD2D884-4C62-4106-8735-F187929529BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/New episodes component/Presenter/NewEpisodesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEBECC79-2DF0-4D5F-BE01-C0DE30C526EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/New episodes component/Presenter/NewEpisodesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "fetchItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78C505E4-29D5-4F4C-85E5-C053450EDF6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/Subchannels component/Presenter/SubchannelsPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D508A87-BEFB-4C4F-A727-342CC8E82506"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/Subchannels component/Presenter/SubchannelsPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "fetchItems()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D225765-C0A2-4EA6-A8AA-60130477FC02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mind Valley App/Features/Channels feature/Child components/Subchannels component/Presenter/SubchannelsPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setItems(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0D225765-C0A2-4EA6-A8AA-60130477FC02 - 5ce946db3da64f00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mind_Valley_App.SubchannelsPresenter.(setItems in _DB61F200F0767CDBAC7CB9A60B6798BF)(Swift.Array&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Mind Valley App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adnanzahid/Documents/Projects/Mindvalley/Mind%20Valley%20App/Mind%20Valley%20App/Features/Channels%20feature/Child%20components/Subchannels%20component/Presenter/SubchannelsPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1382">
+               </Location>
+               <Location
+                  uuid = "0D225765-C0A2-4EA6-A8AA-60130477FC02 - fb4a79de15db0f44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.Array&lt;Mind_Valley_App.PresenterProtocol&gt;) -&gt; Swift.Array&lt;Mind_Valley_App.PresenterProtocol&gt; in Mind_Valley_App.SubchannelsPresenter.(setItems in _DB61F200F0767CDBAC7CB9A60B6798BF)(Swift.Array&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Mind Valley App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adnanzahid/Documents/Projects/Mindvalley/Mind%20Valley%20App/Mind%20Valley%20App/Features/Channels%20feature/Child%20components/Subchannels%20component/Presenter/SubchannelsPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "0D225765-C0A2-4EA6-A8AA-60130477FC02 - 8289deb0aea71a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #6 (Mind_Valley_App.PresenterProtocol) -&gt; Swift.Optional&lt;Any&gt; in Mind_Valley_App.SubchannelsPresenter.(setItems in _DB61F200F0767CDBAC7CB9A60B6798BF)(Swift.Array&lt;Any&gt;) -&gt; ()"
+                  moduleName = "Mind Valley App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adnanzahid/Documents/Projects/Mindvalley/Mind%20Valley%20App/Mind%20Valley%20App/Features/Channels%20feature/Child%20components/Subchannels%20component/Presenter/SubchannelsPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -6,12 +6,23 @@
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
 
-import Foundation
+import XCTest
 @testable import Mind_Valley_App
 
-class MockCategoryRepo: RepoProtocol {
+class MockCategoryRepo {
+    
+    private var requestExpectation: XCTestExpectation
+    
+    init(requestExpectation: XCTestExpectation) {
+        self.requestExpectation = requestExpectation
+    }
+}
+
+extension MockCategoryRepo: RepoProtocol {
     
     func fetchItems(successHandler: @escaping ([Codable]) -> (),
                     failureHandler: @escaping () -> ()) {
+        requestExpectation.fulfill()
+        successHandler([Category(name: "Dummy category from repo")])
     }
 }

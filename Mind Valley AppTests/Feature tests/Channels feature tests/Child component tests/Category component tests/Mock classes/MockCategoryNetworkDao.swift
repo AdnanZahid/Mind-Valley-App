@@ -6,11 +6,28 @@
 //  Copyright © 2020 Adnan Zahid. All rights reserved.
 //
 
-import Foundation
+import XCTest
 @testable import Mind_Valley_App
 
-class MockCategoryNetworkDao: NetworkDaoProtocol {
+class MockCategoryNetworkDao {
     
-    func fetchItems(successHandler: @escaping (Data) -> (), failureHandler: @escaping () -> ()) {
+    private var requestExpectation: XCTestExpectation
+    var shouldSucceed = false
+    
+    init(requestExpectation: XCTestExpectation) {
+        self.requestExpectation = requestExpectation
+    }
+}
+
+extension MockCategoryNetworkDao: NetworkDaoProtocol {
+    
+    func fetchItems(successHandler: @escaping (Data) -> (),
+                    failureHandler: @escaping () -> ()) {
+        requestExpectation.fulfill()
+        if shouldSucceed {
+            successHandler(try! JSONEncoder().encode(CategoriesList(data: CategoriesDataClass(categories: [Category(name: "Dummy category from network")]))))
+        } else {
+            failureHandler()
+        }
     }
 }
