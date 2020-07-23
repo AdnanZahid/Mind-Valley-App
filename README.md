@@ -17,4 +17,4 @@ Channel component consists of 3 child views:
 
 	iii. Categories (Has it's own model, view and presenter - based on horizontal collection view)
 
-	![Component diagram]("Component diagram.png")
+	![ComponentDiagram](ComponentDiagram.png)
